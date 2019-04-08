@@ -7,7 +7,7 @@ tags:
   - general
 ---
 
-![Code School brackets](/assets/images/posts/general/a-shift-in-focus/brackets-code-school.png)
+![Code School brackets](./brackets-code-school.png)
 
 During my 6 years in our awesome industry, I have had a number of roles. Starting off as a web designer, I designed and front-ended static websites (and eventually a few WP and ExpressionEngine ones). The next significant role change was part front-end/part community/part sales with a startup. Another startup where I was only a front-end dev introduced me to MVC environments. Following that was a short stint as a front-end dev for a client services shop and then my last (nearly) 2 years has been at Envy Labs as a front-end dev splitting time between client projects and our product, [Code School](http://codeschool.com).
 

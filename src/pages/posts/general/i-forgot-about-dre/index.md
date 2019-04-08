@@ -9,7 +9,7 @@ tags:
 
 <div class="container">
 
-![Beats ad with Dre](/assets/images/posts/front-end-dev/forgot-about-dre/dre-ad.jpg)
+![Beats ad with Dre](./dre-ad.jpg)
 
 > Nowadays everybody wanna talk like they got something to say  
 > but nothin' comes out when they move they lips  
@@ -28,17 +28,17 @@ Hot UX was an understatement. This was the best onboarding experience that I've 
 
 <div class="grid">
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-01.jpg) 
+![Beats Music](./bm-01.jpg) 
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-02.jpg) 
+![Beats Music](./bm-02.jpg) 
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-03.jpg) 
+![Beats Music](./bm-03.jpg) 
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-04.jpg) 
+![Beats Music](./bm-04.jpg) 
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-05.jpg) 
+![Beats Music](./bm-05.jpg) 
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-06.jpg)
+![Beats Music](./bm-06.jpg)
 
 </div>
 
@@ -48,17 +48,17 @@ Music is a huge part of my life you'll find everything from Bach to 2Pac in my c
 
 <div class="grid">
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-07.jpg)
+![Beats Music](./bm-07.jpg)
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-08.jpg)
+![Beats Music](./bm-08.jpg)
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-09.jpg)
+![Beats Music](./bm-09.jpg)
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-13.jpg)
+![Beats Music](./bm-13.jpg)
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-14.jpg)
+![Beats Music](./bm-14.jpg)
 
-![Beats Music](/assets/images/posts/front-end-dev/forgot-about-dre/bm-15.jpg)
+![Beats Music](./bm-15.jpg)
 
 </div>
 

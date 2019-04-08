@@ -7,7 +7,7 @@ tags:
   - general
 ---
 
-![](/assets/images/posts/general/ricardo-rally-time/all2.png)
+![](./all2.png)
 
 ## Help Me, Help Ricardo
 

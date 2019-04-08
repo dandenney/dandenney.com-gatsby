@@ -1,4 +1,3 @@
-import React from "react"
 import { Link } from "gatsby"
 
 // this comment tells babel to convert jsx to calls to a function called jsx instead of React.createElement
@@ -6,7 +5,6 @@ import { Link } from "gatsby"
 import { css, jsx } from '@emotion/core'
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
 
 const color = 'white'
@@ -26,7 +24,8 @@ const IndexPage = () => (
     `}
     >
       Hover to change color.
-  </div>
+    </div>
+
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )

@@ -1,5 +1,5 @@
 ---
-path: path: "/posts/front-end-dev/i'm-learning-how-to-solve-problems-with-javascript/"
+path: "/posts/front-end-dev/i'm-learning-how-to-solve-problems-with-javascript"
 title: "I'm Learning How to Solve Problems with JavaScript"
 summary: Showing the solution to a brain teaser with JS
 date: '2016-08-08'

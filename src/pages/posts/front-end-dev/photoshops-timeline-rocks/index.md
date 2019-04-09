@@ -1,12 +1,11 @@
 ---
-path: '/posts/front-end-dev/photoshop's-timeline-rocks'
+path: "/posts/front-end-dev/photoshop's-timeline-rocks"
 title: "Photoshop's Timeline Rocks"
 summary: Sharing my experience in making a GIF with the timeline
 date: '2014-01-08'
 tags:
   - front-end-dev
 ---
-
 <section class="row">
 
 <div class="cell cell--s">
@@ -29,7 +28,7 @@ As a front-end dev, I mostly use Photoshop for extracting things these days, exc
 
 This was the look on my face as I tried to open the animation panel. It was gone and I was scared and confused. A quick Google search and some helpful people let me know that it is now called the "timeline". This was only the beginning of the confusion, though, as **this is not the GIF maker you are looking for.**
 
-[![Photoshop CC Timeline](./not-the-gif-maker.png)](./not-the-gif-maker.png) 
+[![Photoshop CC Timeline](./not-the-gif-maker.png) 
 
 Bringing my Google search back up, I then decided to watch [How to make a simple GIF Animation in CS6](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&ved=0CC4QtwIwAA&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DY_32XS0OQB8&ei=uF_NUuDpBKjKsQS0xoHQDQ&usg=AFQjCNHK_9WR9JCvw2fgarACO4pM3GvVfw&sig2=qMPFDoP-bECqKC9WmVhOuQ&bvm=bv.58187178,d.cWc) and now I knew how to get rolling.
 
@@ -83,7 +82,7 @@ At the end of the timeline, I wanted to have the balloon go out of the image and
 
 ## Getting GIFfy With It
 
-[![Photoshop CC Timeline](./getting-giffy-with-it.gif)](./getting-giffy-with-it.gif) 
+[![Photoshop CC Timeline](./getting-giffy-with-it.gif) 
 
 Boom! We have ourselves one monstrously-sized GIF! This one is a bit egregious for the example, but I thought it'd be fun. If you want to play with it, I have the [PSD](https://www.dropbox.com/s/3wr5vp4um22wys4/PS-timeline-example.psd?dl=0) on Dropbox. The one I used only repeated once but I have this one looping just so you can see it in action.
 

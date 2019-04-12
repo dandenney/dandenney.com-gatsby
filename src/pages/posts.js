@@ -14,6 +14,7 @@ const PostsPage = ({data}) => {
       {data.allMarkdownRemark.edges.map(({ node }) => {
         
         const postPath = node.frontmatter.path.split('/')[1];
+        const postDate = new Date(node.frontmatter.date);
 
         if (postPath === 'posts') {
           return(
@@ -21,7 +22,7 @@ const PostsPage = ({data}) => {
               <h3>
                 {node.frontmatter.title}{" "}
                 <span>
-                  — {node.frontmatter.date}
+                  — {postDate.toDateString()}
                 </span>
               </h3>
               <p>{node.summary}</p>

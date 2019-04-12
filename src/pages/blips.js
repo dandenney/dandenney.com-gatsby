@@ -13,6 +13,7 @@ const BlipsPage = ({data}) => {
       {data.allMarkdownRemark.edges.map(({ node }) => {
 
         const blipPath = node.frontmatter.path.split('/')[1];
+        const blipDate = new Date(node.frontmatter.date);
 
         if (blipPath === 'blips') {
           return (
@@ -21,7 +22,7 @@ const BlipsPage = ({data}) => {
               {node.frontmatter.title}{" "}
               <span
               >
-                — {node.frontmatter.date}
+                  — {blipDate.toDateString()}
               </span>
             </h3>
             <p>{node.summary}</p>

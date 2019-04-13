@@ -8,7 +8,7 @@ const BlipsPage = ({data}) => {
 
   return(
     <Layout>
-      <SEO title="Posts" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title="Blips" keywords={[`gatsby`, `application`, `react`]} />
       
       {data.allMarkdownRemark.edges.map(({ node }) => {
 

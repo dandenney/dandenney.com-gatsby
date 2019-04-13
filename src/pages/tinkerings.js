@@ -5,23 +5,22 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 
 const PostsPage = ({data}) => {
-
   return(
     <Layout>
-      <SEO title="Posts" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title="Tinkerings" keywords={[`gatsby`, `application`, `react`]} />
       
       {data.allMarkdownRemark.edges.map(({ node }) => {
         
-        const postPath = node.frontmatter.path.split('/')[1];
-        const postDate = new Date(node.frontmatter.date);
+        const tinkeringPath = node.frontmatter.path.split('/')[1];
+        const tinkeringDate = new Date(node.frontmatter.date);
 
-        if (postPath === 'posts') {
+        if (tinkeringPath === 'tinkerings') {
           return(
             <Link key={node.id} to={node.frontmatter.path}>
               <h3>
                 {node.frontmatter.title}{" "}
                 <span>
-                  — {postDate.toDateString()}
+                  — {tinkeringDate.toDateString()}
                 </span>
               </h3>
               <p>{node.summary}</p>

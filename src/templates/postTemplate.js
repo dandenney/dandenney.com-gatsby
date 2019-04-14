@@ -42,7 +42,11 @@ const Post = styled.article`
   }
 
   pre {
-    overflow-x: scroll;
+    margin-left: 50%;
+    margin-right: 0;
+    padding: 1rem;
+    transform: translateX(-50%);
+    width: 99vw;
   }
 
   .date {

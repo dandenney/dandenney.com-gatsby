@@ -116,90 +116,103 @@ I'm going to share what I did to trim things down, but I can't stress enough tha
 
 Since the title and paragraph elements aren't beind used, I removed all of the CSS in the template for them. Ultimately the better fix is to use them in content entry but I admit that I don't use them in our emails. Here's a little bit of it:
 
-    h1 {
-    	color:#000000 !important;
-    	display:block;
-    	font-family:Helvetica;
-    	font-size:60px;
-    	font-style:normal;
-    	font-weight:normal;
-    	line-height:125%;
-    	letter-spacing:normal;
-    	margin:0;
-    	text-align:center; }
+```css
+h1 {
+  color: #000000 !important;
+  display: block;
+  font-family: Helvetica;
+  font-size: 60px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 125%;
+  letter-spacing: normal;
+  margin: 0;
+  text-align: center;
+}
 
-    h2 {
-    	color:#000000 !important;
-    	display:block;
-    	font-family:Helvetica;
-    	font-size:26px;
-    	font-style:normal;
-    	font-weight:normal;
-    	line-height:125%;
-    	letter-spacing:normal;
-    	margin:0;
-    	text-align:center; }
+h2 {
+  color: #000000 !important;
+  display: block;
+  font-family: Helvetica;
+  font-size: 26px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 125%;
+  letter-spacing: normal;
+  margin: 0;
+  text-align: center;
+}
 
-    h3 {
-    	color:#000000 !important;
-    	display:block;
-    	font-family:Helvetica;
-    	font-size:20px;
-    	font-style:normal;
-    	font-weight:normal;
-    	line-height:125%;
-    	letter-spacing:normal;
-    	margin:0;
-    	text-align:center; }
+h3 {
+  color: #000000 !important;
+  display: block;
+  font-family: Helvetica;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 125%;
+  letter-spacing: normal;
+  margin: 0;
+  text-align: center;
+}
 
-    h4 {
-    	color:#000000 !important;
-    	display:block;
-    	font-family:Helvetica;
-    	font-size:16px;
-    	font-style:normal;
-    	font-weight:normal;
-    	line-height:125%;
-    	letter-spacing:normal;
-    	margin:0;
-    	text-align:left; }
+h4 {
+  color: #000000 !important;
+  display: block;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 125%;
+  letter-spacing: normal;
+  margin: 0;
+  text-align: left;
+}
 
-    @media only screen and (max-width: 480px){
-    	h1 {
-    		font-size:24px !important;
-    		line-height:125% !important;
-    	} }
+@media only screen and (max-width: 480px) {
+  h1 {
+    font-size: 24px !important;
+    line-height: 125% !important;
+  }
+}
 
-    @media only screen and (max-width: 480px){
-    	h2 {
-    		font-size:20px !important;
-    		line-height:125% !important;
-    	} }
+@media only screen and (max-width: 480px) {
+  h2 {
+    font-size: 20px !important;
+    line-height: 125% !important;
+  }
+}
 
-    @media only screen and (max-width: 480px){
-    	h3 {
-    		font-size:18px !important;
-    		line-height:125% !important;
-    	} }
+@media only screen and (max-width: 480px) {
+  h3 {
+    font-size: 18px !important;
+    line-height: 125% !important;
+  }
+}
 
-    @media only screen and (max-width: 480px){
-    	h4 {
-    		font-size:16px !important;
-    		line-height:125% !important;
-    	} }
+@media only screen and (max-width: 480px) {
+  h4 {
+    font-size: 16px !important;
+    line-height: 125% !important;
+  }
+}
+```
 
 #### Nesting
 
 To reduce nesting and to divide up the areas that you're editing, I divided the template into 3 sections: header, content, footer.
 
-    <!-- HEADER -->
-    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%">...
+<!-- prettier-ignore -->
+```html
+<!-- HEADER -->
+<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%">...
 
-    <!-- CONTENT -->
-    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%">...
+<!-- CONTENT -->
+<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%">...
 
-    <!-- FOOTER -->
-    <table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%">...
+<!-- FOOTER -->
+<table bgcolor="#ffffff" border="0" cellpadding="0" cellspacing="0" width="100%">...
+```
 
 #### The multiple cell approach
 
@@ -207,52 +220,87 @@ It's a small amount of code per table, but the combination of saving lines witho
 
 **Ghost Tables**
 
-    <!--[if mso]>
-    	<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
-    		<tr>
-    <![endif]-->
-    <!--[if mso]>
-    	<td valign="top" width="600" style="width:600px;">
-    <![endif]-->
-    <table style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;" class="mcnTextContentContainer" align="left" border="0" cellpadding="0" cellspacing="0" width="100%">
-    	<tbody>
-    		<tr>
-    			<td class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #000000;font-family: Helvetica;font-size: 15px;line-height: 200%;text-align: left;" valign="top">
-    				<div style="text-align: center;">
-    					<span style="font-size:18px; line-height:22px"><strong>Let’s be real: We know you spent yesterday Amazon Prime-ing your way to happiness. Here’s what you missed while you were trying to score fancy headphones and half-priced Kindles.</strong></span>
-    				</div>
-    			</td>
-    		</tr>
-    	</tbody>
-    </table>
-    <!--[if mso]>
-    </td>
-    <![endif]-->
-    <!--[if mso]>
-    	</tr>
-    </table>
-    <![endif]-->
+```html
+<!--[if mso]>
+	<table align="left" border="0" cellspacing="0" cellpadding="0" width="100%" style="width:100%;">
+		<tr>
+<![endif]-->
+<!--[if mso]>
+	<td valign="top" width="600" style="width:600px;">
+<![endif]-->
+<table
+  style="max-width: 100%;min-width: 100%;border-collapse: collapse;mso-table-lspace: 0pt;mso-table-rspace: 0pt;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;"
+  class="mcnTextContentContainer"
+  align="left"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+  width="100%"
+>
+  <tbody>
+    <tr>
+      <td
+        class="mcnTextContent"
+        style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #000000;font-family: Helvetica;font-size: 15px;line-height: 200%;text-align: left;"
+        valign="top"
+      >
+        <div style="text-align: center;">
+          <span style="font-size:18px; line-height:22px"
+            ><strong
+              >Let’s be real: We know you spent yesterday Amazon Prime-ing your
+              way to happiness. Here’s what you missed while you were trying to
+              score fancy headphones and half-priced Kindles.</strong
+            ></span
+          >
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<!--[if mso]>
+</td>
+<![endif]-->
+<!--[if mso]>
+	</tr>
+</table>
+<![endif]-->
+```
 
 **Multiple cells**
 
-    <!-- Content Container -->
-    <table align="center" border="0" cellpadding="0" cellspacing="0" class="flex-size">
-    	<tr>
-    		<td style="font-size: 0;"> </td>
-    		<td width="564">
+```html
+<!-- Content Container -->
+<table
+  align="center"
+  border="0"
+  cellpadding="0"
+  cellspacing="0"
+  class="flex-size"
+>
+  <tr>
+    <td style="font-size: 0;"></td>
+    <td width="564">
+      <!--- Content Content --->
+      <table border="0" cellpadding="0" cellspacing="0" width="100%">
+        <tr>
+          <td
+            class="mcnTextContent"
+            style="color: #000000; font-family: Helvetica; font-size: 18px; line-height: 30px; -ms-text-size-adjust: 100%; text-align: center; word-break: break-word; padding-top: 36px;"
+          >
+            <strong
+              >Let's be real: We know you spent yesterday Amazon Prime-ing your
+              way to happiness. Here's what you missed while you were trying to
+              score fancy headphones and half-priced Kindles.</strong
+            >
+          </td>
+        </tr>
+      </table>
+    </td>
 
-    			<!--- Content Content --->
-    			<table border="0" cellpadding="0" cellspacing="0" width="100%">
-    				<tr>
-    					<td class="mcnTextContent" style="color: #000000; font-family: Helvetica; font-size: 18px; line-height: 30px; -ms-text-size-adjust: 100%; text-align: center; word-break: break-word; padding-top: 36px;">
-    						<strong>Let's be real: We know you spent yesterday Amazon Prime-ing your way to happiness. Here's what you missed while you were trying to score fancy headphones and half-priced Kindles.</strong>
-    					</td>
-    				</tr>
-    			</table>
-
-    		<td style="font-size: 0;"> </td>
-    	</tr>
-    </table>
+    <td style="font-size: 0;"></td>
+  </tr>
+</table>
+```
 
 #### Reducing inlined styles
 
@@ -260,8 +308,11 @@ This is a little challenging if you're using MailChimp templates. You have to ad
 
 These two rules are in the code 112 times. The lack of gzip in email clients means that is 111 times too many (but only because these two targeted clients will read from a `<style>` tag in the `<head>`). For giggles, I saved 111 into a file and it's 7kb. (There's also a "ms" rule but I'm not entirely sure if microsoft phone clients read the `<style>` tag.)
 
-    mso-line-height-rule: exactly;
-    ‐webkit-text-size-adjust: 100%;
+<!-- prettier-ignore -->
+```css
+mso-line-height-rule: exactly;
+‐webkit-text-size-adjust: 100%;
+```
 
 #### Reducing style fights
 
@@ -269,17 +320,53 @@ While my fixes work in this one-off context, it would require editing the main t
 
 In this sample, you can see that the sizes and colors are set in the `<td>`, but they're being countered by a `<div>`, an `<a>`, and a `<span>`.
 
-    <td class="mcnTextContent" style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #000000;font-family: Helvetica;font-size: 11px;line-height: 125%;text-align: center;"
-    valign="top">
-    	<div style="text-align: left;"><span style="font-size:18px; line-height:22px"><strong>Bernie Says He's “Proud To Stand” with Hillary</strong>
-    		<br>
-    		<br>
-    		Bernie Sanders, progressive millennial hero and America’s favorite grandpa, officially endorsed his longtime frenemy Hillary Clinton. "Let me begin by thanking the 13 million Americans who voted for me during the Democratic primaries," he said, <a href="http://www.cnn.com/2016/07/11/politics/hillary-clinton-bernie-sanders/" target="_blank" style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #000000;font-weight: bold;text-decoration: none;"><span style="color:#1cc7f2">before eventually congratulating Clinton on her victory</span></a>
+```html
+<td
+  class="mcnTextContent"
+  style="padding-top: 0;padding-right: 18px;padding-bottom: 9px;padding-left: 18px;mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #000000;font-family: Helvetica;font-size: 11px;line-height: 125%;text-align: center;"
+  valign="top"
+>
+  <div style="text-align: left;">
+    <span style="font-size:18px; line-height:22px"
+      ><strong>Bernie Says He's “Proud To Stand” with Hillary</strong>
+      <br />
+      <br />
+      Bernie Sanders, progressive millennial hero and America’s favorite
+      grandpa, officially endorsed his longtime frenemy Hillary Clinton. "Let me
+      begin by thanking the 13 million Americans who voted for me during the
+      Democratic primaries," he said,
+      <a
+        href="http://www.cnn.com/2016/07/11/politics/hillary-clinton-bernie-sanders/"
+        target="_blank"
+        style="mso-line-height-rule: exactly;-ms-text-size-adjust: 100%;-webkit-text-size-adjust: 100%;color: #000000;font-weight: bold;text-decoration: none;"
+        ><span style="color:#1cc7f2"
+          >before eventually congratulating Clinton on her victory</span
+        ></a
+      ></span
+    >
+  </div>
+</td>
+```
 
 Here you can see that the styles to match the desired look are in the `<td>` and that only specific styles to the link are put on the `<a>`.
 
-    <td class="mcnTextContent" style="color: #000000; font-family: Helvetica; font-size: 18px; line-height: 22px; -ms-text-size-adjust: 100%; padding-top: 18px; word-break: break-word;">
-    	Bernie Sanders, progressive millennial hero and America's favorite grandpa, officially endorsed his longtime frenemy Hillary Clinton. "Let me begin by thanking the 13 million Americans who voted for me during the Democratic primaries," he said, <a href="http://www.cnn.com/2016/07/11/politics/hillary-clinton-bernie-sanders/" target="_blank" style="color: #1cc7f2; font-weight: bold; text-decoration: none;">before eventually congratulating Clinton on her victory</a>
+```html
+<td
+  class="mcnTextContent"
+  style="color: #000000; font-family: Helvetica; font-size: 18px; line-height: 22px; -ms-text-size-adjust: 100%; padding-top: 18px; word-break: break-word;"
+>
+  Bernie Sanders, progressive millennial hero and America's favorite grandpa,
+  officially endorsed his longtime frenemy Hillary Clinton. "Let me begin by
+  thanking the 13 million Americans who voted for me during the Democratic
+  primaries," he said,
+  <a
+    href="http://www.cnn.com/2016/07/11/politics/hillary-clinton-bernie-sanders/"
+    target="_blank"
+    style="color: #1cc7f2; font-weight: bold; text-decoration: none;"
+    >before eventually congratulating Clinton on her victory</a
+  >
+</td>
+```
 
 ## The Comparison
 

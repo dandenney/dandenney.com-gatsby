@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background: #ffffff;
   font-family: canada-type-gibson, sans-serif;

@@ -21,7 +21,7 @@ As a front-end dev, I mostly use Photoshop for extracting things these days, exc
 
 This was the look on my face as I tried to open the animation panel. It was gone and I was scared and confused. A quick Google search and some helpful people let me know that it is now called the "timeline". This was only the beginning of the confusion, though, as **this is not the GIF maker you are looking for.**
 
-[![Photoshop CC Timeline](./not-the-gif-maker.png)
+![Photoshop CC Timeline](./not-the-gif-maker.png)
 
 Bringing my Google search back up, I then decided to watch [How to make a simple GIF Animation in CS6](https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&ved=0CC4QtwIwAA&url=http%3A%2F%2Fwww.youtube.com%2Fwatch%3Fv%3DY_32XS0OQB8&ei=uF_NUuDpBKjKsQS0xoHQDQ&usg=AFQjCNHK_9WR9JCvw2fgarACO4pM3GvVfw&sig2=qMPFDoP-bECqKC9WmVhOuQ&bvm=bv.58187178,d.cWc) and now I knew how to get rolling.
 
@@ -39,7 +39,7 @@ I got permission from [Justin](http://twitter.com/justinmezzell) to share the PS
 
 Timelines default to 5 seconds and you will likely want to change that. Making the timeline shorter is super intuitive: you just drag the draggable-looking item to the left and you now have a shorter timeline. If you want to make it longer, you would drag it to the right, right? Unfortunately not. I'm hoping I get corrected by someone with experience here but checking "help", Googling, and having a little "please save me" session with Justin led me to believe that the only way to extend the timeline is to individually extend the available time for each item, like so:
 
-[![Photoshop CC Timeline](drag-all-the-things.gif)
+![Photoshop CC Timeline](drag-all-the-things.gif)
 
 <small>Note: that was not an inception GIF, I used [LICEcap](http://www.cockos.com/licecap) which is awesome for screener GIFs (but not very purdy).</small>
 

@@ -7,6 +7,7 @@
   "dependencies": {
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.10",
+    "add": "^2.0.6",
     "gatsby": "^2.3.5",
     "gatsby-cli": "^2.5.5",
     "gatsby-image": "^2.0.37",
@@ -15,6 +16,7 @@
     "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sharp": "^2.0.32",
+    "gatsby-plugin-web-font-loader": "^1.0.4",
     "gatsby-remark-images": "^3.0.10",
     "gatsby-source-filesystem": "^2.0.28",
     "gatsby-transformer-remark": "^2.3.8",
@@ -23,7 +25,8 @@
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "yarn": "^1.15.2"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

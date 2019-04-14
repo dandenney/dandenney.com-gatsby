@@ -25,7 +25,7 @@ const DanStyles = styled.div`
     padding-left: 3rem;
 
     svg {
-      height: 80vh;
+      height: calc(100vh - 216px);
       width: auto;
     }
   }

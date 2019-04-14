@@ -19,12 +19,15 @@ const HomeStyles = styled.section`
 
 const DanStyles = styled.div`
   flex-shrink: 0;
-  padding-left: 3rem;
   text-align: center;
 
-  svg {
-    height: 80vh;
-    width: auto;
+  @media screen and (min-width: 1200px) {
+    padding-left: 3rem;
+
+    svg {
+      height: 80vh;
+      width: auto;
+    }
   }
 `;
 

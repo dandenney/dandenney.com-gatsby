@@ -1,24 +1,29 @@
 import { Link } from 'gatsby';
-import PropTypes from 'prop-types';
 import React from 'react';
+import styled from '@emotion/styled';
 
-const Header = ({ siteTitle }) => (
-  <header>
-    <h1 style={{ margin: 0 }}>
-      <Link to="/">{siteTitle}</Link>
-    </h1>
-    <Link to="/posts">Blog</Link>
-    <Link to="/blips">Blips</Link>
-    <Link to="/tinkerings">Tinkerings</Link>
-  </header>
+import SiteNav from './sitenav';
+
+import avatar from '../images/avatar-circle.png';
+
+const HeaderStyles = styled.header`
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 2rem;
+
+  img {
+    display: block;
+  }
+`;
+
+const Header = () => (
+  <HeaderStyles>
+    <Link className="link-img" to="/">
+      <img alt="Illustrated Dan Denney in a circle" src={avatar} width="40" />
+    </Link>
+    <SiteNav />
+  </HeaderStyles>
 );
-
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-};
-
-Header.defaultProps = {
-  siteTitle: ``,
-};
 
 export default Header;

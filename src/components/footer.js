@@ -6,7 +6,7 @@ import SiteNav from './sitenav';
 import gatsbyicon from '../images/gatsby-icon.png';
 
 const FooterStyles = styled.footer`
-  border-top: 1px solid var(--color-text);
+  border-top: 1px solid var(--color-accent);
   overflow: hidden;
   padding: 1rem 2rem 0;
   text-align: center;

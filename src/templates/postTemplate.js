@@ -17,6 +17,13 @@ const Post = styled.article`
     width: 99vw;
   }
 
+  p > code {
+    background: #f7f8f8;
+    border: 1px solid #eef0f1;
+    border-radius: 2px;
+    padding: 2px 4px;
+  }
+
   .date {
     font-size: 0.875rem;
     margin-top: 0.5rem;

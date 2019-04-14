@@ -1,7 +1,7 @@
 ---
 path: '/posts/front-end-dev/building-a-small-pwa-with-preact-and-firebase'
 title: Building a Small PWA with Preact and Firebase
-summary: Sharing how I built a little exercise tracker 
+summary: Sharing how I built a little exercise tracker
 date: '2017-07-23'
 codeHighlighting: true
 tags:
@@ -221,7 +221,7 @@ At this point, I realized ExercisesList wasn’t a great name for the primary co
 
 ### Adding an Exercises List for Reals
 
-I kinda looked like [Larry David](https://media3.giphy.com/media/VKtsOAHDx1Luo/giphy.gif) as I tried to decide between Exercises List and Exercise List. This job would be great if it weren’t for naming. Ultimately, I wanted the relationship of the word list to be closer to the child Exercise than the parent. ¯\_(ツ)_/¯
+I kinda looked like [Larry David](https://media3.giphy.com/media/VKtsOAHDx1Luo/giphy.gif) as I tried to decide between Exercises List and Exercise List. This job would be great if it weren’t for naming. Ultimately, I wanted the relationship of the word list to be closer to the child Exercise than the parent. ¯\_(ツ)\_/¯
 
 For that same reason, I nested ExerciseList in Exercises. I can imagine SignIn possibly being separated in the future, but not Exercises.
 
@@ -876,7 +876,7 @@ Similar to `handleFailed`, I then needed to pass a function into Exercise and ca
 
 This part felt magical because it’s so fast. On clicking the “complete” button, it pushes the new setting. Because Preact is always listening for state changes, it grabs that new setting and renders it.
 
-![](./setting-update.gif)
+![](setting-update.gif)
 
 The final bit of functionality for this version was outputting an indicator that the data was updated. As a progress tracker, I wanted visual feedback of progress. To do this, I needed to use `filter` to only output completed sets and `map` to loop over the filtered results. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/31d0d1ecf4f6b648047c36cc0b53cc294865eea4)
 
@@ -1020,10 +1020,10 @@ The performance dropped over 10 points from the default, and I’ll have to figu
 
 At this point, it is usable, but not an experience I'd ship to others. When you auth, there is some downtime as it transitions, which feels janky. Once it’s loaded, it’s good, though. Goals for v2 improvements:
 
-*   Fix the console errors when you are signed out
-*   Over 80 in Lighthouse perf score
-*   Loading animation with a smooth transition from sign in and on load
-*   Visual indicator for failures (they save with no feedback)
+- Fix the console errors when you are signed out
+- Over 80 in Lighthouse perf score
+- Loading animation with a smooth transition from sign in and on load
+- Visual indicator for failures (they save with no feedback)
 
 I also want to add some reporting because I’m all about that data, that data. It’d be overkill to do full graphs, but I want some sparklines that show when I struggle to advance a setting and counts of the total number of exercises done.
 

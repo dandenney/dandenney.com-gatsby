@@ -15,9 +15,9 @@ tags:
 
 I had been progressing pretty well lately in learning vanilla JS and it felt awesome. Then I hit a wall in doing something that I thought was straight forward. I ended up putting about 5-6 hours into grokking how to get a value out of an event listener, that time being split between attempts, googling, reading Stack Overflows, reading the docs, pairing with a coworker, and _maybe_ an hour sitting like this.
 
-![](./gif-matt-damon-crying.gif)
+![](gif-matt-damon-crying.gif)
 
-## (If this, then that) * 999
+## (If this, then that) \* 999
 
 The fun part of front-end development is that there are likely 999 ways to solve the problem that I was facing. Having chosen one, I then tried about 423 ways to achieve it before getting it to work. If I wasn’t so focused on improving my skills I might have switched away to a different solution, but I had to know that I could do this.
 

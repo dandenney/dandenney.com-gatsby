@@ -7,10 +7,18 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const Post = styled.article`
-  color: #222222;
   font-family: canada-type-gibson, sans-serif;
   line-height: 1.5;
   padding: 2rem;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--color-heading);
+  }
 
   h1 {
     font-size: 1.5rem;
@@ -47,6 +55,22 @@ const Post = styled.article`
     padding: 1rem;
     transform: translateX(-50%);
     width: 99vw;
+  }
+
+  a {
+    background-color: transparent;
+    border-bottom: 2px solid var(--color-link);
+    border-radius: 2px;
+    color: var(--color-link);
+    display: inline-block;
+    margin-bottom: 1px;
+    padding: 1px 4px 0 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease-in-out;
+
+    &:hover {
+      background-color: #fef7f7;
+    }
   }
 
   .date {

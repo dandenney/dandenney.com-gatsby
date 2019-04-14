@@ -3,6 +3,7 @@
   --color-heading: #4f6d7a;
   --color-link: #b51f24;
   --color-text: #586166;
+  --color-accent: #d3d7d9;
 }
 
 * {
@@ -20,7 +21,6 @@ body {
 a {
   background-color: transparent;
   border-bottom: 2px solid var(--color-link);
-  border-radius: 2px;
   color: var(--color-link);
   display: inline-block;
   margin-bottom: 1px;
@@ -31,6 +31,14 @@ a {
 
 a:hover {
   background-color: #fef7f7;
+}
+
+.gatsby-resp-image-link {
+  border: 0;
+}
+
+.gatsby-resp-image-link:hover {
+  background-color: transparent;
 }
 
 a.link-img {

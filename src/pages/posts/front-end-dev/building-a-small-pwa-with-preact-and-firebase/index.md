@@ -8,15 +8,15 @@ tags:
   - front-end-dev
 ---
 
-<small class="db mbs">Read time: 29:33</small>
+<small>Read time: 29:33</small>
 
 <div class="quick-links">
 
-[Live Version](https://pwa-preact-firebase.firebaseapp.com/) [GitHub Repo](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase)
+[Live Version](https://pwa-preact-firebase.firebaseapp.com/) | [GitHub Repo](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase)
 
 </div>
 
-Disclaimer: This is not a tutorial!
+#### Disclaimer: This is not a tutorial!
 
 I have a ton of respect for the hard work that goes into using a project to teach the fundamentals of a technology. This isn't that, it's me sharing a process of learning by building something of my own.
 
@@ -99,27 +99,26 @@ I learned this organization technique from [Steve Kinney](https://twitter.com/st
 
 </div>
 
-    import firebase from 'firebase';
+```jsx
+import firebase from 'firebase';
 
-    const config = {
-      apiKey: 'AIzaSyBdk6HFp-9zT4oilTokoo4_e-ZX6uwR_Gg',
-      authDomain: 'pwa-preact-firebase.firebaseapp.com',
-      databaseURL: 'https://pwa-preact-firebase.firebaseio.com',
-      projectId: 'pwa-preact-firebase',
-      storageBucket: 'pwa-preact-firebase.appspot.com',
-      messagingSenderId: '263234041568'
-    };
-    firebase.initializeApp(config);
+const config = {
+  apiKey: 'AIzaSyBdk6HFp-9zT4oilTokoo4_e-ZX6uwR_Gg',
+  authDomain: 'pwa-preact-firebase.firebaseapp.com',
+  databaseURL: 'https://pwa-preact-firebase.firebaseio.com',
+  projectId: 'pwa-preact-firebase',
+  storageBucket: 'pwa-preact-firebase.appspot.com',
+  messagingSenderId: '263234041568',
+};
 
-    export default firebase;
+firebase.initializeApp(config);
 
-    export const database = firebase.database();
-    export const auth = firebase.auth();
-    export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+export default firebase;
 
-<div class="row">
-
-<div class="cell cell--s">
+export const database = firebase.database();
+export const auth = firebase.auth();
+export const googleAuthProvider = new firebase.auth.GoogleAuthProvider();
+```
 
 I’m only using Google Auth because it doesn’t require an API key and I’m always logged in on my phone. There are other options (Twitter, FB, email/password) as well.
 
@@ -133,25 +132,19 @@ In my initial version, I put all of the code for the UI in the home folder (with
 
 Since I knew that ExercisesList would have child components, I created a folder with an index, exported ExercisesList (with placeholder copy), and imported it into the home route. A bare minimum Preact component looks like this:
 
-</div>
+```jsx
+import { h, Component } from 'preact';
 
-</div>
-
-    import { h, Component } from 'preact';
-
-    export default class ExercisesList extends Component {
-      render() {
-        return (
-          <section>
-            <p>ExercisesList</p>
-          </section>
-        );
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+export default class ExercisesList extends Component {
+  render() {
+    return (
+      <section>
+        <p>ExercisesList</p>
+      </section>
+    );
+  }
+}
+```
 
 And it’s imported like this (depending on its location) `import ExercisesList from '../../components/ExercisesList';`
 
@@ -173,29 +166,23 @@ It’s a personal preference, but my workflow when I’m going to need new compo
 
 The only reason this app will exist is to track individual progress, so it’s intentionally useless if you’re not authed. To enable that, I imported `auth` and `googleAuthProvider`.
 
-</div>
+```jsx
+import { h, Component } from 'preact';
+import { auth, googleAuthProvider } from '../firebase';
 
-</div>
-
-    import { h, Component } from 'preact';
-    import { auth, googleAuthProvider } from '../firebase';
-
-    export default class SignIn extends Component {
-      render() {
-        return (
-          <section>
-              <h1>Raisercise</h1>
-              <button onClick={() => auth.signInWithRedirect(googleAuthProvider)}>
-                Sign In
-              </button>
-          </section>
-        );
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+export default class SignIn extends Component {
+  render() {
+    return (
+      <section>
+        <h1>Raisercise</h1>
+        <button onClick={() => auth.signInWithRedirect(googleAuthProvider)}>
+          Sign In
+        </button>
+      </section>
+    );
+  }
+}
+```
 
 For auth, this is where the magic happens: `onClick={() => auth.signInWithRedirect(googleAuthProvider)}`. `signInWithRedirect` is one of a few auth methods from Firebase and I’m passing the Google option. That’s all it takes for the transaction to happen, which is pretty amazing to me.
 
@@ -227,25 +214,19 @@ For that same reason, I nested ExerciseList in Exercises. I can imagine SignIn p
 
 Anyhow, I use a `pc` snippet for a generic Preact component, which looks like this.
 
-</div>
+```jsx
+import { h, Component } from "preact";
 
-</div>
+export default class  extends Component {
+  constructor () {
+    super()
+  }
 
-    import { h, Component } from "preact";
-
-    export default class  extends Component {
-      constructor () {
-        super()
-      }
-
-      render () {
-        return ()
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+  render () {
+    return ()
+  }
+}
+```
 
 I left the constructor cause I knew I’d need it later and added a placeholder list, simulating the map that I’ll need eventually. Importing that into Exercises made this feel like I was finally getting somewhere. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/7341165085cd6341b890e9cd8b122fe90c7e6f98)
 
@@ -263,34 +244,28 @@ State is a concept that I don’t understand well enough to explain yet, but I�
 
 The best part is that it’s straight forward. Here’s how I added a null user to state in ExerciseList.
 
-</div>
+```jsx
+import { h, Component } from 'preact';
 
-</div>
+export default class extends Component {
+  constructor() {
+    super();
 
-    import { h, Component } from 'preact';
+    this.state = {
+      currentUser: null,
+    };
+  }
 
-    export default class extends Component {
-      constructor() {
-        super();
-
-        this.state = {
-            currentUser: null
-        };
-      }
-
-      render() {
-        return (
-          <ul>
-            <li>Exercise</li>
-            <li>Exercise</li>
-          </ul>
-        );
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+  render() {
+    return (
+      <ul>
+        <li>Exercise</li>
+        <li>Exercise</li>
+      </ul>
+    );
+  }
+}
+```
 
 Viewing that in the React Developer Tools confirmed that it worked and that I had messed up. When I refactored, I forgot to assign a name to the class in ExerciseList, so it was rendering a `<_default>` component. Fixed that. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/ef267755b9ebaed6f5153d51f612aa7217bd8883)
 
@@ -306,39 +281,33 @@ At this point, clicking the Sign In button changes the state of `currentUser` fr
 
 The final bit to make this work was some conditional logic in the Exercises component’s render function. For that to work, it needed to bring in state and assign it within the render function.
 
-</div>
+```jsx
+import { h, Component } from 'preact';
+import { auth, database } from '../firebase';
+import ExerciseList from './ExerciseList';
+import SignIn from '../SignIn';
 
-</div>
+export default class Exercises extends Component {
+  constructor() {
+    super();
 
-    import { h, Component } from 'preact';
-    import { auth, database } from '../firebase';
-    import ExerciseList from './ExerciseList';
-    import SignIn from '../SignIn';
+    this.state = {
+      currentUser: null,
+    };
+  }
 
-    export default class Exercises extends Component {
-      constructor() {
-        super();
+  render() {
+    const currentUser = this.state;
 
-        this.state = {
-          currentUser: null
-        };
-      }
-
-      render() {
-        const currentUser = this.state;
-
-        return (
-          <section>
-            {!currentUser && <SignIn />}
-            {currentUser && <ExerciseList />}
-          </section>
-        );
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+    return (
+      <section>
+        {!currentUser && <SignIn />}
+        {currentUser && <ExerciseList />}
+      </section>
+    );
+  }
+}
+```
 
 With a user signed in, the UI is showing the ExerciseList component.
 
@@ -368,62 +337,50 @@ Now that I had access to the user object via Firebase, I could access the attrib
 
 Preact passes props to the render functions, so I shortened up the attributes and added them to the image. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/ba9f3e2bee1f716f6ca597c7246049686e184fdd)
 
-</div>
+```jsx
+import { h, Component } from 'preact';
 
-</div>
+export default class CurrentUser extends Component {
+  constructor() {
+    super();
+  }
 
-    import { h, Component } from 'preact';
-
-    export default class CurrentUser extends Component {
-      constructor() {
-        super();
-      }
-
-      render() {
-        const user = this.props.user;
-        return (
-          <article>
-            <img alt={user.displayName} src={user.photoURL} width="40" />
-            <button>Sign Out</button>
-          </article>
-        );
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+  render() {
+    const user = this.props.user;
+    return (
+      <article>
+        <img alt={user.displayName} src={user.photoURL} width="40" />
+        <button>Sign Out</button>
+      </article>
+    );
+  }
+}
+```
 
 #### Adding Sign Out Functionality
 
 Arguably, I’d never want to sign out aside from testing, but it feels awful to not have the option. Even more so when it’s 2 lines of code to make it happen. The CurrentUser component needed access to Firebase auth and then the `auth.signOut()` method.
 
-</div>
+```jsx
+import { h, Component } from 'preact';
+import { auth } from '../firebase';
 
-</div>
+export default class CurrentUser extends Component {
+  constructor() {
+    super();
+  }
 
-    import { h, Component } from 'preact';
-    import { auth } from '../firebase';
-
-    export default class CurrentUser extends Component {
-      constructor() {
-        super();
-      }
-
-      render() {
-        const user = this.props.user;
-        return (
-          <article>
-            <img alt={user.displayName} src={user.photoURL} width="40" />
-            <button onClick={() => auth.signOut()}>Sign Out</button>
-          </article>
-        );
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+  render() {
+    const user = this.props.user;
+    return (
+      <article>
+        <img alt={user.displayName} src={user.photoURL} width="40" />
+        <button onClick={() => auth.signOut()}>Sign Out</button>
+      </article>
+    );
+  }
+}
+```
 
 Whew. I now had a fully-functional Preact app with auth, all to see 2 lines of static HTML. It was time for the fun.
 
@@ -431,16 +388,18 @@ Whew. I now had a fully-functional Preact app with auth, all to see 2 lines of s
 
 Knowing that Firebase stores data in JS objects, I imagined what the structure for the data would be in the planning portion of the project. I needed a series of exercises, which would have a name and a settingType. Those would have sessions with a setting and a flippable completed key. Each session would have an individual set with a timestamp and a completed key. I came up with:
 
-    - exercises
-      - exercise
-        - name
-        - settingType
-        - sessions
-          - setting
-          - completed
-          - sets
-            - timestamp
-            - completed
+```markdown
+- exercises
+  - exercise
+    - name
+    - settingType
+    - sessions
+      - setting
+      - completed
+      - sets
+        - timestamp
+        - completed
+```
 
 ### No Plan Survives Contact with Code
 
@@ -448,34 +407,30 @@ While that’s a misquote of a classic, it’s very true for me, and it was true
 
 The first thing that I realized that I missed was users. While I thought that I’d be the only user, even for testing there would need to be 2\. With this structure, exercises would be read/written by everyone. So, the first step was changing to users first.
 
-    - user
-      - exercises
+```markdown
+- user
+  - exercises
+```
 
 I also missed some attributes that I’d need and figured that creating sets after each completion round seemed like overkill. (That part was based on how I’d need to compare the recent data to determine when to raise the setting. Since I’d need to compare regardless, it was more work with no apparent benefit).
 
 The timestamp is unnecessary for the basic functionality, but I knew that I’d want to graph these in a future version and wanted to be sure to have the data. I ended up with:
 
-    - user
-      - exercise
-        - name
+```markdown
+- user
+  - exercise
+    - name
+    - setting
+    - settingType
+    - reps
+    - raiseAfter
+    - raiseBy
+    - sets
+      - set
         - setting
-        - settingType
-        - reps
-        - raiseAfter
-        - raiseBy
-        - sets
-          - set
-            - setting
-            - completed
-            - completedDate
-
-</div>
-
-</div>
-
-<div class="row">
-
-<div class="cell cell--s">
+        - completed
+        - completedDate
+```
 
 One of the awesome features about Firebase is that you can create the data in their UI to test it out before needing to hook up a form. (Kinda how you’d mock up with local JSON).
 
@@ -495,31 +450,23 @@ Since I’m an authed user, Firebase will allow me to read and write to the data
 
 I added `exercises: null` to state so that it can be updated once the data is retrieved. Some of the URL is in the config, so I access it by piecing together bits with my UID. That doesn’t match the dummy data that I added, so I hard-coded `user01` to test.
 
-</div>
+```jsx
+componentDidMount() {
+  auth.onAuthStateChanged(currentUser => {
+    this.setState({ currentUser });
+  });
 
-</div>
+  const exercisesRef = database.ref('/' + 'user01' + '/exercises');
 
-    componentDidMount() {
-      auth.onAuthStateChanged(currentUser => {
-        this.setState({ currentUser });
-      });
-
-      const exercisesRef = database.ref('/' + 'user01' + '/exercises');
-
-      exercisesRef.on('value', snapshot => {
-        this.setState({ exercises: snapshot.val() });
-      });
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+  exercisesRef.on('value', snapshot => {
+    this.setState({ exercises: snapshot.val() });
+  });
+}
+```
 
 Boom! Data coming from Firebase was now getting pushed directly into state, which would later determine what and when to render. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/765f2e221400d73ecabbd551d875289cf56c53a6)
 
 ![](./initial-state.jpg)
-
-<div class="stretch stretch--a mbm">
 
 #### A Learning Curveball
 
@@ -527,101 +474,79 @@ Speaking of rendering, this was where everything fell apart for me. I didn’t k
 
 The issue was that I was supposed to just push state and output from it, but I had been trying to build a nested local state. It was Steve Kinney’s explanation of how Firebase stores data (and why to use Lodash) that finally made it click.
 
-</div>
-
 ### Rendering Data from Firebase
 
 Lodash’s map method works with nested objects like `.map()` does for arrays. Installing and importing that was the first step to rendering data. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/802932a538e5a6b167c8e33e74f0b4991c106aa2)
 
 Since I wanted to loop over a user and their exercises, I needed both of those accessible within ExercisesList. I updated the render function in Exercises to include exercises and then assigned both as props.
 
-</div>
+```jsx
+render() {
+  const { currentUser, exercises } = this.state;
 
-</div>
-
-    render() {
-      const { currentUser, exercises } = this.state;
-
-      return (
+  return (
+    <section>
+      {!currentUser && <SignIn />}
+      {currentUser &&
         <section>
-          {!currentUser && <SignIn />}
-          {currentUser &&
-            <section>
-                <ExerciseList exercises={exercises} user={currentUser} />
-                <CurrentUser user={currentUser} />
-            </section>}
-        </section>
-      );
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+            <ExerciseList exercises={exercises} user={currentUser} />
+            <CurrentUser user={currentUser} />
+        </section>}
+    </section>
+  );
+}
+```
 
 To ensure this worked, I rendered a single attribute in ExercisesList. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/d202ed355e4c59bbbaca034eba82ccbf5a74b679)
 
-</div>
+```jsx
+render() {
+  const { user, exercises } = this.props;
+  return (
+    <section>
+      {map(exercises, (exercise, key) => <article>{exercise.name}</article>)}
+    </section>
+  );
+}
+```
 
-</div>
-
-    render() {
-      const { user, exercises } = this.props;
-      return (
-        <section>
-          {map(exercises, (exercise, key) => <article>{exercise.name}</article>)}
-        </section>
-      );
-    }
-
-<div class="row">
-
-<div class="cell cell--s">![](./render-titles.jpg)
+![](./render-titles.jpg)
 
 I knew that I was going to be adding a lot (well some) more functionality, so I wanted to push the HTML for an individual Exercise into its own component. That required passing the user, the key, and all of the attributes of an exercise in via props. This spread operator `{...exercise}` made that easy.
 
-</div>
-
-</div>
-
-    {map(exercises, (exercise, key) => (
-      <Exercise key={key} {...exercise} user={user} />
-    ))}
-
-<div class="row">
-
-<div class="cell cell--s">
+```jsx
+{
+  map(exercises, (exercise, key) => (
+    <Exercise key={key} {...exercise} user={user} />
+  ));
+}
+```
 
 To render them I added each of the ones that I wanted as constants before calling them in the HTML. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/d1bf95980bf1059dd726fac2f9297b186e38017c)
 
-</div>
-
-</div>
-
-    render() {
-      const { name, setting, settingType } = this.props;
-      return (
-        <article>
-          <h3>
-            {name}
-          </h3>
-          <p>
-            <div>{setting}</div> {settingType}
-          </p>
-          <p>
-            <button setting={setting}>
-              Fail
-            </button>
-            <button setting={setting}>
-              Complete
-            </button>
-          </p>
-        </article>
-      );
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+```jsx
+render() {
+  const { name, setting, settingType } = this.props;
+  return (
+    <article>
+      <h3>
+        {name}
+      </h3>
+      <p>
+        <div>{setting}</div> {settingType}
+      </p>
+      <p>
+        <button setting={setting}>
+          Fail
+        </button>
+        <button setting={setting}>
+          Complete
+        </button>
+      </p>
+    </article>
+  );
+}
+```
 
 At this point, the skeleton was in place. I knew auth was working and I could retrieve and render data from Firebase. It was time to start adding data from the app.
 
@@ -633,55 +558,49 @@ To save this data, I needed to get all the values from the inputs, assign them t
 
 I like to get one small bit working and then replicate, so I got the exercise name saving to state first.
 
-</div>
+```jsx
+import { h, Component } from 'preact';
 
-</div>
+export default class NewExercise extends Component {
+  constructor() {
+    super();
 
-    import { h, Component } from 'preact';
+    this.state = {
+      name: '',
+    };
 
-    export default class NewExercise extends Component {
-      constructor() {
-        super();
+    this.handleChange = this.handleChange.bind(this);
+  }
 
-        this.state = {
-          name: ''
-        };
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+  }
 
-        this.handleChange = this.handleChange.bind(this);
-      }
+  render() {
+    const name = this.state;
+    return (
+      <section>
+        <h2>New Exercise</h2>
 
-      handleChange(e) {
-        this.setState({
-          [e.target.name]: e.target.value
-        });
-      }
-
-      render() {
-        const name = this.state;
-        return (
-          <section>
-            <h2>New Exercise</h2>
-
-            <form>
-              <div>
-                <label for="name">Name</label>
-                <input
-                  type="text"
-                  name="name"
-                  onChange={this.handleChange}
-                  placeholder="Chest Press"
-                  value={this.state.name}
-                />
-              </div>
-            </form>
-          </section>
-        );
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+        <form>
+          <div>
+            <label for="name">Name</label>
+            <input
+              type="text"
+              name="name"
+              onChange={this.handleChange}
+              placeholder="Chest Press"
+              value={this.state.name}
+            />
+          </div>
+        </form>
+      </section>
+    );
+  }
+}
+```
 
 I had learned this technique from tutorials. A function is used as a listener (handleChange) for changes to an input. When it’s changed, local state is updated. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/68888063a715ac0d9f55fa4578e43bdfe6977321)
 
@@ -693,48 +612,29 @@ With that working, I added the rest of the data inputs. This meant adding each a
 
 My favorite little bit (and something I had recently learned) was chaining all of the items into one `const`.
 
-</div>
-
-</div>
-
-    const {
-      name,
-      setting,
-      settingType,
-      raiseAfter,
-      raiseBy,
-      reps
-    } = this.state;
-
-<div class="row">
-
-<div class="cell cell--s">
+```jsx
+const { name, setting, settingType, raiseAfter, raiseBy, reps } = this.state;
+```
 
 With the data in state, I now could use that and Firebase’s `push` method to handle the submission of the form. The impressive thing about `push` is that it creates a unique identifier, so I don’t have to things like “exercise01”. To do this, I needed to import the database and allow NewExercise to have access to the current user’s UID. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/1433ebed3c85cdc379efb175e2a5e453a5f682d8)
 
 This `handleSubmit` function blocks the default behavior of the form and sends data to the URL specified, which is based on the UID of the current user. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/3531509bf6009ce12da25421d135b134ab7efdaf)
 
-</div>
+```jsx
+handleSubmit(e) {
+  e.preventDefault();
+  const exercisesRef = database.ref('/' + this.props.user.uid + '/exercises');
 
-</div>
-
-    handleSubmit(e) {
-      e.preventDefault();
-      const exercisesRef = database.ref('/' + this.props.user.uid + '/exercises');
-
-      exercisesRef.push({
-        name: this.state.name,
-        setting: this.state.setting,
-        settingType: this.state.settingType,
-        reps: this.state.reps,
-        raiseAfter: this.state.raiseAfter,
-        raiseBy: this.state.raiseBy
-      });
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+  exercisesRef.push({
+    name: this.state.name,
+    setting: this.state.setting,
+    settingType: this.state.settingType,
+    reps: this.state.reps,
+    raiseAfter: this.state.raiseAfter,
+    raiseBy: this.state.raiseBy
+  });
+}
+```
 
 After submitting the form, I could see that the core data structure was the same, with the added benefit of unique keys.
 
@@ -748,29 +648,23 @@ Because I like to start small to make sure things are working properly, I starte
 
 I created a `handleFailed` function with a slightly more complex URL to point to in Firebase. It looks up the user, then the setting of the current exercise, and pushes data to it. The function itself is passed into Exercise, which requires binding props in the constructor.
 
-</div>
+```jsx
+handleFailed(key) {
+  const currentUser = this.props.user;
+  const setting = this.props.exercises[key].setting;
 
-</div>
-
-    handleFailed(key) {
-      const currentUser = this.props.user;
-      const setting = this.props.exercises[key].setting;
-
-      database
-        .ref("/" + currentUser.uid)
-        .child("exercises")
-        .child(key)
-        .child("/sets")
-        .push({
-          completed: false,
-          completedDate: Date.now(),
-          setting: setting
-        });
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+  database
+    .ref("/" + currentUser.uid)
+    .child("exercises")
+    .child(key)
+    .child("/sets")
+    .push({
+      completed: false,
+      completedDate: Date.now(),
+      setting: setting
+    });
+}
+```
 
 The hard-coded `user01` that I had used for ensuring the FB data worked earlier came back into play here, so I had to update it to use the current user as well: `const exercisesRef = database.ref( '/' + this.state.currentUser.uid + '/exercises' );`
 
@@ -786,91 +680,67 @@ Adding data for completions required some logic, and I don’t love the organiza
 
 First things first, I created some constants to make the comparisons more readable.
 
-</div>
-
-</div>
-
-    const currentUser = this.props.user;
-    const raiseAfter = this.props.exercises[key].raiseAfter;
-    const raiseBy = this.props.exercises[key].raiseBy;
-    const setting = this.props.exercises[key].setting;
-    const completedCount = filter(this.props.exercises[key].sets, {
-      setting: setting,
-      completed: true
-    }).length;
-
-<div class="row">
-
-<div class="cell cell--s">
+```jsx
+const currentUser = this.props.user;
+const raiseAfter = this.props.exercises[key].raiseAfter;
+const raiseBy = this.props.exercises[key].raiseBy;
+const setting = this.props.exercises[key].setting;
+const completedCount = filter(this.props.exercises[key].sets, {
+  setting: setting,
+  completed: true,
+}).length;
+```
 
 To get the completed count, I needed to filter the results using lodash. Then I used them to create the basic push (when completed is at least 2 less than the amount to raise by).
 
-</div>
-
-</div>
-
-    if (completedCount < raiseAfter - 1) {
-      database
-        .ref("/" + currentUser.uid)
-        .child("exercises")
-        .child(key)
-        .child("/sets")
-        .push({
-          completed: true,
-          completedDate: Date.now(),
-          setting: setting
-        });
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+```jsx
+if (completedCount < raiseAfter - 1) {
+  database
+    .ref('/' + currentUser.uid)
+    .child('exercises')
+    .child(key)
+    .child('/sets')
+    .push({
+      completed: true,
+      completedDate: Date.now(),
+      setting: setting,
+    });
+}
+```
 
 Because I was dealing with integers and decimals for settings and JavaScript hates math with decimals, I needed to tack on some methods to check for a decimal number and output differently when there is one. Thank goodness for Stack Overflow!
 
-</div>
-
-</div>
-
-    else {
-      const newSetting = function checkForDecimal() {
-        if (raiseBy.indexOf(".") === -1) {
-          return Number(setting) + Number(raiseBy);
-        } else {
-          return (Number(setting) + Number(raiseBy)).toFixed(1);
-        }
-      }
+```jsx
+else {
+  const newSetting = function checkForDecimal() {
+    if (raiseBy.indexOf(".") === -1) {
+      return Number(setting) + Number(raiseBy);
+    } else {
+      return (Number(setting) + Number(raiseBy)).toFixed(1);
     }
-
-<div class="row">
-
-<div class="cell cell--s">
+  }
+}
+```
 
 When the number of completions is one less than the amount to complete before raising, completing one should add the completed data and raise the setting.
 
-</div>
-
-</div>
-
-    database
-      .ref("/" + currentUser.uid)
-      .child("exercises")
-      .child(key)
-      .child("/sets")
-      .push({
-        completed: true,
-        completedDate: Date.now(),
-        setting: setting
-      });
-    database
-      .ref("/" + currentUser.uid)
-      .child("exercises")
-      .child(key)
-      .update({ setting: newSetting });
-
-<div class="row">
-
-<div class="cell cell--s">
+```jsx
+database
+  .ref('/' + currentUser.uid)
+  .child('exercises')
+  .child(key)
+  .child('/sets')
+  .push({
+    completed: true,
+    completedDate: Date.now(),
+    setting: setting,
+  });
+database
+  .ref('/' + currentUser.uid)
+  .child('exercises')
+  .child(key)
+  .update({ setting: newSetting });
+```
 
 Similar to `handleFailed`, I then needed to pass a function into Exercise and call it on the button in there. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/5f84e9564c3f4c665c6b33b22d075106da13c873)
 
@@ -880,59 +750,51 @@ This part felt magical because it’s so fast. On clicking the “complete” bu
 
 The final bit of functionality for this version was outputting an indicator that the data was updated. As a progress tracker, I wanted visual feedback of progress. To do this, I needed to use `filter` to only output completed sets and `map` to loop over the filtered results. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/31d0d1ecf4f6b648047c36cc0b53cc294865eea4)
 
-</div>
+```jsx
+import { h, Component } from 'preact';
+import { filter, map } from 'lodash';
 
-</div>
+export default class Exercise extends Component {
+  constructor() {
+    super();
+  }
 
-    import { h, Component } from 'preact';
-    import { filter, map } from 'lodash';
+  render() {
+    const {
+      name,
+      setting,
+      settingType,
+      sets,
+      handleCompleted,
+      handleFailed,
+    } = this.props;
+    const filters = filter(sets, {
+      setting,
+      completed: true,
+    });
 
-    export default class Exercise extends Component {
-      constructor() {
-        super();
-      }
-
-      render() {
-        const {
-          name,
-          setting,
-          settingType,
-          sets,
-          handleCompleted,
-          handleFailed
-        } = this.props;
-        const filters = filter(sets, {
-          setting,
-          completed: true
-        });
-
-        return (
-          <article>
-            <h3>
-              {name}
-            </h3>
-            <p>
-              <div>{setting}</div> {settingType}
-            </p>
-            <p>
-              <button onClick={handleFailed} setting={setting}>
-      Fail
-              </button>
-              <button onClick={handleCompleted} setting={setting}>
-      Complete
-              </button>
-            </p>
-            <ul>
-              {sets && map(filters, (filter, key) => <li key={key}>{key}</li>)}
-            </ul>
-          </article>
-        );
-      }
-    }
-
-<div class="row">
-
-<div class="cell cell--s">
+    return (
+      <article>
+        <h3>{name}</h3>
+        <p>
+          <div>{setting}</div> {settingType}
+        </p>
+        <p>
+          <button onClick={handleFailed} setting={setting}>
+            Fail
+          </button>
+          <button onClick={handleCompleted} setting={setting}>
+            Complete
+          </button>
+        </p>
+        <ul>
+          {sets && map(filters, (filter, key) => <li key={key}>{key}</li>)}
+        </ul>
+      </article>
+    );
+  }
+}
+```
 
 To verify it was working without digging through Dev Tools, I rendered a list with the key, knowing that I’d make that more like “eye candy” with CSS.
 
@@ -946,15 +808,13 @@ CSS in JS is new to me, and I don’t have a clear methodology yet. However, thi
 
 </div>
 
-    $c-bg: #313743;
-    $c-bg-light: #30353f;
-    $c-negative: #a24335;
-    $c-positive: #7b9058;
-    $c-text: #ffffff;
-
-<div class="row">
-
-<div class="cell cell--s">
+```sass
+$c-bg: #313743;
+$c-bg-light: #30353f;
+$c-negative: #a24335;
+$c-positive: #7b9058;
+$c-text: #ffffff;
+```
 
 I then added a font from Google Fonts, reset font weights, and added default styles to inputs and buttons. I usually set a variable for spacing and use rems, but I stayed with pixels. Those styles got it headed in the right direction, and I wanted to try component-level styles for the rest. [commit](https://github.com/dandenney/building-a-small-pwa-with-preact-and-firebase/commit/2a46dc62d08169bc8ae66ab03fab99df6626c09f)
 

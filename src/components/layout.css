@@ -1,9 +1,17 @@
+:root {
+  --color-bg: #000000;
+  --color-heading: #4f6d7a;
+  --color-link: #b51f24;
+  --color-text: #586166;
+}
+
 * {
   box-sizing: border-box;
 }
 
 body {
   background: #ffffff;
+  color: var(--color-text);
   font-family: canada-type-gibson, sans-serif;
   margin: 0;
 }

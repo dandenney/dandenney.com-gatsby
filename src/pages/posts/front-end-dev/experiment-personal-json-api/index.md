@@ -13,7 +13,7 @@ The most important thing that I can say right now is that this is an experiment.
 
 ## Why I am doing this
 
-I've been a fan of data since I was young. In my teens, I used newspapers to track stocks to see what would happen if I day traded with $100k. Later, I moved to watching patterns in dog racing results and started betting them occasionally. I got distracted from this stuff for a while, but data visualization on the web is exploding and the [quantified self](http://en.wikipedia.org/wiki/Quantified_Self) movement is intriguing. There are great tools for collecting and displaying data and I want to learn.
+I've been a fan of data since I was young. In my teens, I used newspapers to track stocks to see what would happen if I day traded with \$100k. Later, I moved to watching patterns in dog racing results and started betting them occasionally. I got distracted from this stuff for a while, but data visualization on the web is exploding and the [quantified self](http://en.wikipedia.org/wiki/Quantified_Self) movement is intriguing. There are great tools for collecting and displaying data and I want to learn.
 
 ## Big goals, small steps
 
@@ -158,7 +158,7 @@ So here's a GIF of it in action. Pardon the fact that it's hideous, this was qui
 
 <figure>
 
-![](/assets/images/posts/front-end-dev/experiment-personal-json-api/by-golly-it-works.gif)
+![](by-golly-it-works.gif)
 
 </figure>
 

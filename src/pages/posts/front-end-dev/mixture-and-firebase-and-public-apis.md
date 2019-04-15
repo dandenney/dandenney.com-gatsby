@@ -17,4 +17,4 @@ That said, I'm sharing my progress with API learning and this video is showing h
 
 Neil from Mixture did a video on getting data from Firebase and how easy it is to display the data without writing JavaScript, too.
 
-<div class="video-wrapper"><iframe allowfullscreen="" class="fitvid" frameborder="0" height="394" src="http://www.youtube.com/embed/RpEdeQapjjk" width="700"></iframe></div>
+<div class="video-wrapper"><iframe allowfullscreen="" class="fitvid" frameborder="0" height="394" src="https://www.youtube.com/embed/RpEdeQapjjk" width="700"></iframe></div>

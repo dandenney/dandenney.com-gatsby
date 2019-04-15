@@ -1,9 +1,9 @@
 :root {
-  --color-bg: #000000;
+  --color-bg: #fcfaff;
   --color-heading: #4f6d7a;
   --color-link: #b51f24;
   --color-text: #586166;
-  --color-accent: #d3d7d9;
+  --color-accent: #f2e9ff;
 }
 
 * {
@@ -20,11 +20,8 @@ body {
 
 a {
   background-color: transparent;
-  border-bottom: 2px solid var(--color-link);
   color: var(--color-link);
   display: inline-block;
-  margin-bottom: 1px;
-  padding: 1px 4px 0 4px;
   text-decoration: none;
   transition: background-color 0.3s ease-in-out;
 }

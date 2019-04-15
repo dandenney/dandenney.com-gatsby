@@ -6,14 +6,30 @@ import SEO from '../components/seo';
 import Dan from '../images/dan.svg';
 
 const HomeStyles = styled.section`
+  background: var(--color-bg);
   margin: 0 auto;
   max-width: 880px;
   padding: 2rem;
+
+  .home-content {
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    padding: 1rem;
+  }
 
   @media screen and (min-width: 1200px) {
     align-items: center;
     display: flex;
     max-width: 100%;
+    padding-bottom: 0;
+
+    .home-content {
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 0;
+      padding: 2rem;
+    }
   }
 `;
 
@@ -25,7 +41,7 @@ const DanStyles = styled.div`
     padding-left: 3rem;
 
     svg {
-      height: calc(100vh - 216px);
+      height: calc(100vh - 176px);
       width: auto;
     }
   }
@@ -35,7 +51,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <HomeStyles>
-      <div>
+      <div className="home-content">
         <h1>
           Hi! I'm Dan Denney and I'm a front-end developer at{' '}
           <a href="https://www.datacamp.com">DataCamp</a>.

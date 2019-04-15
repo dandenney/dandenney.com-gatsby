@@ -36,7 +36,7 @@ const NavListStyles = styled.section`
     color: var(--color-text);
     font-size: 1rem;
     font-weight: 400;
-    margin: 0;
+    margin: 0.5rem 0 0 0;
   }
 
   time {

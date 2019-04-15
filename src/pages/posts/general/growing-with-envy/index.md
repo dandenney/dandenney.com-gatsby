@@ -49,9 +49,9 @@ I got a heads-up before I started about the tech that the front-end team uses so
 
 I'm diving back into using Terminal more and learned a bit more about setting up local Rails instances. On top of this, I have learned a ton just by listening to the way that the team communicates and discusses problems to solve. I can't even fathom where my skill level will be in a few months.
 
-![Hiten Shah quote - you make your own luck. Every single minute of every day.](./hiten-shah.png) 
+![Hiten Shah quote - you make your own luck. Every single minute of every day.](./hiten-shah.png)
 
-[Startupquotes.com](http://startupquote.com/post/4799610682) 
+[Startupquotes.com](http://startupquote.com/post/4799610682)
 
 <div class="column">
 
@@ -73,6 +73,6 @@ More importantly, it took leaving people that I really cared about at those jobs
 
 I want everyone to have the job that they're dreaming of. Keep sharpening your skills and be mindful of the things that really make you excited when you're working. Then, make your own luck! If you ever need a little inspiration, just watch Gary V's talk:
 
-<iframe allowfullscreen="" frameborder="0" height="516" src="http://www.youtube.com/embed/EhqZ0RU95d4" width="688"></iframe>
+<iframe allowfullscreen="" frameborder="0" height="516" src="https://www.youtube.com/embed/EhqZ0RU95d4" width="688"></iframe>
 
 Oh and I know an [awesome service for sharpening your coding skills](http://codeschool.com) when you're ready to get going. (wink, wink)

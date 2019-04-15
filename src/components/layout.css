@@ -22,12 +22,14 @@ a {
   background-color: transparent;
   color: var(--color-link);
   display: inline-block;
+  line-height: 1;
   text-decoration: none;
-  transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 a:hover {
   background-color: #fef7f7;
+  box-shadow: 0 0 0 4px #fef7f7;
 }
 
 .gatsby-resp-image-link {
@@ -36,6 +38,7 @@ a:hover {
 
 .gatsby-resp-image-link:hover {
   background-color: transparent;
+  box-shadow: none;
 }
 
 a.link-img {

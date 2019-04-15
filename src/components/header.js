@@ -8,6 +8,7 @@ import avatar from '../images/avatar-circle.png';
 
 const HeaderStyles = styled.header`
   align-items: center;
+  border-bottom: 1px solid var(--color-accent);
   display: flex;
   justify-content: space-between;
   padding: 0.5rem 2rem;

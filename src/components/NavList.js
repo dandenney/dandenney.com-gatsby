@@ -3,44 +3,54 @@ import React from 'react';
 import styled from '@emotion/styled';
 
 const NavListStyles = styled.section`
+  background: var(--color-bg);
   display: flex;
   justify-content: center;
   padding: 2rem;
 
   a {
-    background-color: transparent;
-    border-bottom: 2px solid var(--color-link);
-    border-radius: 2px;
-    color: var(--color-link);
-    display: inline-block;
+    background: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: block;
     font-weight: 600;
-    margin-bottom: 1px;
-    padding: 1px 0 0 0;
-    text-decoration: none;
-    transition: background-color 0.3s ease-in-out;
+    font-size: 1.25rem;
+    margin-top: 1.5rem;
+    padding: 1rem;
+    transition: transform 0.3s ease-in-out;
 
-    &:hover {
-      background-color: #fef7f7;
+    span {
+      transition: background-color 0.3s ease-in-out;
     }
 
-    &:not(:first-of-type) {
-      margin-top: 1.5rem;
+    &:hover {
+      transform: translateY(-1px);
+
+      span {
+        background-color: #fef7f7;
+      }
     }
   }
 
   p {
-    margin: 0.5rem 0;
+    color: var(--color-text);
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
   }
 
   time {
+    color: var(--color-text);
+    font-weight: 400;
     display: block;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     margin-top: 0.5rem;
   }
 
   @media screen and (min-width: 768px) {
     a {
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      padding: 1.5rem;
     }
   }
 `;

@@ -11,19 +11,20 @@ const PostsPage = ({ data }) => {
       <SEO title="Posts" keywords={[`gatsby`, `application`, `react`]} />
 
       <NavList>
+        <h1>Posts</h1>
+        <p>Your typical blog posts, maybe not as well written.</p>
+
         {data.allMarkdownRemark.edges.map(({ node }) => {
           const postPath = node.frontmatter.path.split('/')[1];
           const postDate = new Date(node.frontmatter.date);
 
           if (postPath === 'posts') {
             return (
-              <>
-                <Link key={node.id} to={node.frontmatter.path}>
-                  {node.frontmatter.title}
-                </Link>
+              <Link key={node.id} to={node.frontmatter.path}>
+                <span>{node.frontmatter.title}</span>
                 <p>{node.frontmatter.summary}</p>
                 <time dateTime={postDate}>{postDate.toDateString()}</time>
-              </>
+              </Link>
             );
           }
 

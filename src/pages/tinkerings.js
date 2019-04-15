@@ -11,21 +11,25 @@ const PostsPage = ({ data }) => {
       <SEO title="Tinkerings" keywords={[`gatsby`, `application`, `react`]} />
 
       <NavList>
+        <h1>Tinkerings</h1>
+        <p>
+          Small projects that I get to abandon without guilt because I posted
+          them.
+        </p>
+
         {data.allMarkdownRemark.edges.map(({ node }) => {
           const tinkeringPath = node.frontmatter.path.split('/')[1];
           const tinkeringDate = new Date(node.frontmatter.date);
 
           if (tinkeringPath === 'tinkerings') {
             return (
-              <>
-                <Link key={node.id} to={node.frontmatter.path}>
-                  {node.frontmatter.title}
-                </Link>
+              <Link key={node.id} to={node.frontmatter.path}>
+                <span>{node.frontmatter.title}</span>
                 <p>{node.frontmatter.summary}</p>
                 <time dateTime={tinkeringDate}>
                   {tinkeringDate.toDateString()}
                 </time>
-              </>
+              </Link>
             );
           }
 

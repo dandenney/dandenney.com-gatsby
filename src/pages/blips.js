@@ -11,18 +11,18 @@ const BlipsPage = ({ data }) => {
       <SEO title="Blips" keywords={[`gatsby`, `application`, `react`]} />
 
       <NavList>
+        <h1>Blips</h1>
+        <p>Short, journal-type posts. Kinda like a personal Twitter.</p>
         {data.allMarkdownRemark.edges.map(({ node }) => {
           const blipPath = node.frontmatter.path.split('/')[1];
           const blipDate = new Date(node.frontmatter.date);
 
           if (blipPath === 'blips') {
             return (
-              <>
-                <Link key={node.id} to={node.frontmatter.path}>
-                  {node.frontmatter.title}{' '}
-                </Link>
+              <Link key={node.id} to={node.frontmatter.path}>
+                <span>{node.frontmatter.title}</span>
                 <time dateTime={blipDate}>{blipDate.toDateString()}</time>
-              </>
+              </Link>
             );
           }
 

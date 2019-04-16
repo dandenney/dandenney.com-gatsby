@@ -8,7 +8,8 @@ import gatsbyicon from '../images/gatsby-icon.png';
 const FooterStyles = styled.footer`
   border-top: 1px solid var(--color-accent);
   overflow: hidden;
-  padding: 1rem 2rem 0;
+  padding: 1rem 2rem 2.5rem;
+  position: relative;
   text-align: center;
 
   nav {
@@ -20,8 +21,9 @@ const FooterStyles = styled.footer`
   }
 
   .gatsby-icon {
-    display: block;
-    margin: 0 auto -20px;
+    bottom: -20px;
+    left: calc(50% - 30px);
+    position: absolute;
   }
 
   @media screen and (min-width: 768px) {

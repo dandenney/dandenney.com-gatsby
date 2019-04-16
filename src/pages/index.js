@@ -8,27 +8,50 @@ import Dan from '../images/dan.svg';
 const HomeStyles = styled.section`
   background: var(--color-bg);
   margin: 0 auto;
-  max-width: 880px;
+  min-height: calc(100vh - 132px);
   padding: 2rem;
 
-  .home-content {
-    background: #fff;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    margin-bottom: 2rem;
-    padding: 1rem;
+  @media screen and (min-width: 768px) {
+    max-width: 100%;
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
+    align-items: center;
+    display: flex;
+    padding-bottom: 0;
+
+    h1 {
+      font-size: 2.5rem;
+    }
   }
 
   @media screen and (min-width: 1200px) {
-    align-items: center;
-    display: flex;
-    max-width: 100%;
-    padding-bottom: 0;
+    h1 {
+      font-size: 3.5rem;
+    }
 
-    .home-content {
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      margin-bottom: 0;
-      padding: 2rem;
+    p {
+      font-size: 1.25rem;
+    }
+  }
+
+  @media screen and (min-width: 1400px) {
+    max-width: 1440px;
+
+    h1 {
+      font-size: 4.5rem;
+    }
+
+    p {
+      font-size: 1.5rem;
     }
   }
 `;
@@ -37,11 +60,18 @@ const DanStyles = styled.div`
   flex-shrink: 0;
   text-align: center;
 
-  @media screen and (min-width: 1200px) {
+  @media screen and (min-width: 768px) {
+    svg {
+      height: calc(40vh);
+      width: auto;
+    }
+  }
+
+  @media screen and (min-width: 1000px) {
     padding-left: 3rem;
 
     svg {
-      height: calc(100vh - 176px);
+      height: calc(100vh - 170px);
       width: auto;
     }
   }
@@ -51,7 +81,7 @@ const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <HomeStyles>
-      <div className="home-content">
+      <div>
         <h1>
           Hi! I'm Dan Denney and I'm a front-end developer at{' '}
           <a href="https://www.datacamp.com">DataCamp</a>.

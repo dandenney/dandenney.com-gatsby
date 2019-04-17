@@ -17,7 +17,8 @@ const Post = styled.article`
     width: 99vw;
   }
 
-  p > code {
+  p > code,
+  li > code {
     background: #f7f8f8;
     border: 1px solid #eef0f1;
     border-radius: 2px;

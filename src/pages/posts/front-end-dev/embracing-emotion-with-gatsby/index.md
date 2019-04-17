@@ -8,6 +8,8 @@ tags:
   - front-end-dev
 ---
 
+<style>.tweets { background-color: #f1f4f6; padding: 1rem; }.twitter-tweet { background: #ffffff; border: 1px solid #e6ecf0; border-radius: 4px; box-shadow: 0 2px 3px #e6ecf0; padding: 1rem; margin: 0; } .twitter-tweet + .twitter-tweet { margin-top: 1rem; } </style>
+
 While the title is about the CSS-in-JS package named [Emotion](https://emotion.sh/docs/introduction), I will say that I haven't been this excited about front-end development for quite a while. I'm all-in on the JAMstack, building in [Gatsby](https://www.gatsbyjs.org) daily at work and I just revamped my site with it as well. It's by far the fastest and most technically advanced version that I've ever made and I hardly did a thing besides format markdown. The beneits come from the people behind the project, so I get to keep learning the fundamentals of ES6, JSX, and React.
 
 ## We get so much for free
@@ -294,7 +296,25 @@ export default StyledPage;
 
 ### Smarter people have smarter options
 
-I reviewed a bunch of repos and [tweeted](https://twitter.com/dandenney/status/1118259679308779521) to see what other people were doing. [Mr. Powers shared a sensible approach](https://twitter.com/_drewpowers/status/1118273699138940933) for importing the styled components from a separate file. This seems like a more clean approach than keeping them in a single file. In this, I'm coupling a single file to single "page" component, but you could technically break out each styled child component to a single file if you like minimal files.
+I reviewed a bunch of repos and [tweeted](https://twitter.com/dandenney/status/1118259679308779521) to see what other people were doing. [Mr. Powers shared a sensible approach](https://twitter.com/_drewpowers/status/1118273699138940933) for importing the styled components from a separate file.
+
+Here are some of the ideas:
+
+<section class="tweets">
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">My personal opinion and how I find it most effective is to use the css prop. Build your app with a common set of base components and customize when you need to with css prop/props.<a href="https://t.co/N3fPqwjhR6">https://t.co/N3fPqwjhR6</a></p>&mdash; Kye (@kyehohenberger) <a href="https://twitter.com/kyehohenberger/status/1118276340673736704?ref_src=twsrc%5Etfw">April 16, 2019</a></blockquote>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">No blog post but in every component folder we have a styles.js file, and use `import * as Styled from &#39;./styles&#39;`. Cleans it up and scopes to the component</p>&mdash; Drew Powers (@_drewpowers) <a href="https://twitter.com/_drewpowers/status/1118273699138940933?ref_src=twsrc%5Etfw">April 16, 2019</a></blockquote>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">The general rule is NEVER import another component’s styles, but yeah we’ve just all agreed to it and call it out in code reviews. If you introduce cross-deps like that it does become a mess</p>&mdash; Drew Powers (@_drewpowers) <a href="https://twitter.com/_drewpowers/status/1118286333997408256?ref_src=twsrc%5Etfw">April 16, 2019</a></blockquote>
+
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">I have so many thoughts. My latest app structure has a src/styled directory for purely UI Styled Components (I don’t use Emotion) alongside a regular src/components directory (avoiding colocation for styling). And Styled System for mapping CSS props and a theme config object 👌</p>&mdash; Drew Barontini (@drewbarontini) <a href="https://twitter.com/drewbarontini/status/1118449918912417792?ref_src=twsrc%5Etfw">April 17, 2019</a></blockquote>
+
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I keep refining it with each app, but I’ve really liked that structure. Definitely don’t overthink it. Move files around until it feels right, and then keep refining it.</p>&mdash; Drew Barontini (@drewbarontini) <a href="https://twitter.com/drewbarontini/status/1118451806005338112?ref_src=twsrc%5Etfw">April 17, 2019</a></blockquote>
+
+</section>
+
+The Drews™ are both using separate files and this seems like a more clean approach. In this example below, I'm coupling a single file to single "page" component, but you could technically break out each styled child component to a single file if you like minimal files.
 
 #### import.js page
 

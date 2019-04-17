@@ -312,6 +312,8 @@ Here are some of the ideas:
 
 <blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">I keep refining it with each app, but I’ve really liked that structure. Definitely don’t overthink it. Move files around until it feels right, and then keep refining it.</p>&mdash; Drew Barontini (@drewbarontini) <a href="https://twitter.com/drewbarontini/status/1118451806005338112?ref_src=twsrc%5Etfw">April 17, 2019</a></blockquote>
 
+<blockquote class="twitter-tweet" data-conversation="none" data-lang="en"><p lang="en" dir="ltr">This is great!<br><br>For your `Song` import question, we usually avoid naming anything in the styles `Song` and using a wildcard import (`import * as Song from ‘Song’`).<br><br>Then, you can use `Song.Wrapper`, `Song.Img`, `Song.Title`, etc. Helps a lot in identifying the parent import.</p>&mdash; Nick Walsh (@nickawalsh) <a href="https://twitter.com/nickawalsh/status/1118506553580118017?ref_src=twsrc%5Etfw">April 17, 2019</a></blockquote>
+
 </section>
 
 The Drews™ are both using separate files and this seems like a more clean approach. In this example below, I'm coupling a single file to single "page" component, but you could technically break out each styled child component to a single file if you like minimal files.
@@ -333,7 +335,7 @@ import {
   Artist,
   Play,
   Nav,
-} from '../components/separate';
+} from '../components/import';
 
 const ImportPage = () => (
   <Layout>

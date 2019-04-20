@@ -8,7 +8,7 @@ tags:
   - front-end-dev
 ---
 
-<style>.tweets { background-color: #f1f4f6; padding: 1rem; }.twitter-tweet { background: #ffffff; border: 1px solid #e6ecf0; border-radius: 4px; box-shadow: 0 2px 3px #e6ecf0; padding: 1rem; margin: 0; } .twitter-tweet + .twitter-tweet { margin-top: 1rem; } </style>
+<style>.tweets { background-color: #f1f4f6; padding: 1rem; }.twitter-tweet { background: #ffffff; border: 1px solid #e6ecf0; border-radius: 4px; box-shadow: 0 2px 3px #e6ecf0; font-size: 0.75rem; padding: 1rem; margin: 0; } .twitter-tweet + .twitter-tweet { margin-top: 1rem; } .twitter-tweet p { font-size: 1rem; margin-top: 0;}</style>
 
 While the title is about the CSS-in-JS package named [Emotion](https://emotion.sh/docs/introduction), I will say that I haven't been this excited about front-end development for quite a while. I'm all-in on the JAMstack, building in [Gatsby](https://www.gatsbyjs.org) daily at work and I just revamped my site with it as well. It's by far the fastest and most technically advanced version that I've ever made and I hardly did a thing besides format markdown. The beneits come from the people behind the project, so I get to keep learning the fundamentals of ES6, JSX, and React.
 

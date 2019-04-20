@@ -3,7 +3,12 @@ import styled from '@emotion/styled';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
+import Icon from '../components/icon';
+
 import Dan from '../images/dan.svg';
+import IconCodepen from '../images/icons/logo-codepen.svg';
+import IconGithub from '../images/icons/logo-github.svg';
+import IconTwitter from '../images/icons/logo-twitter.svg';
 
 const HomeStyles = styled.section`
   background: var(--color-bg);
@@ -96,6 +101,12 @@ const IndexPage = () => (
           <a href="http://unmatchedstyle.com">Unmatched Style</a> are keeping it
           going these days.
         </p>
+
+        <Icon size={24} color="#131417" svg={<IconCodepen />} />
+
+        <Icon size={24} color="#171515" svg={<IconGithub />} />
+
+        <Icon size={24} color="#1ca1f2" svg={<IconTwitter />} />
       </div>
 
       <DanStyles>

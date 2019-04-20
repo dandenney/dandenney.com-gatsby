@@ -1,9 +1,17 @@
-const path = require("path")
+const path = require('path');
 
 exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+  exports.onCreateWebpackConfig = ({ stage, actions }) => {
+    actions.setWebpackConfig({
+      resolve: {
+        modules: [path.resolve(__dirname, 'src'), 'node_modules'],
+      },
+    });
+  };
 
-  const postTemplate = path.resolve(`src/templates/postTemplate.js`)
+  const { createPage } = actions;
+
+  const postTemplate = path.resolve(`src/templates/postTemplate.js`);
 
   return graphql(`
     {
@@ -22,7 +30,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
   `).then(result => {
     if (result.errors) {
-      return Promise.reject(result.errors)
+      return Promise.reject(result.errors);
     }
 
     result.data.allMarkdownRemark.edges.forEach(({ node }) => {
@@ -30,7 +38,7 @@ exports.createPages = ({ actions, graphql }) => {
         path: node.frontmatter.path,
         component: postTemplate,
         context: {}, // additional data can be passed via context
-      })
-    })
-  })
-}
+      });
+    });
+  });
+};

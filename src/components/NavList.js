@@ -1,9 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import styled from '@emotion/styled';
 
+const NavList = ({ bgcolor, children }) => {
+  return (
+    <NavListStyles bgcolor={bgcolor}>
+      <nav>{children}</nav>
+    </NavListStyles>
+  );
+};
+
 const NavListStyles = styled.section`
-  background: var(--color-bg);
+  background: ${props => props.bgcolor};
   display: flex;
   justify-content: center;
   padding: 2rem;
@@ -55,10 +64,12 @@ const NavListStyles = styled.section`
   }
 `;
 
-const NavList = ({ children }) => (
-  <NavListStyles>
-    <nav>{children}</nav>
-  </NavListStyles>
-);
+NavListStyles.PropTypes = {
+  bgcolor: PropTypes.string,
+};
+
+NavListStyles.defaultProps = {
+  bgcolor: 'var(--color-bg)',
+};
 
 export default NavList;

@@ -13,9 +13,13 @@
 body {
   background: #ffffff;
   color: var(--color-text);
-  font-family: canada-type-gibson, sans-serif;
+  font-family: canada-type-gibson, Verdana, sans-serif;
   line-height: 1.5;
   margin: 0;
+}
+
+main {
+  min-height: calc(100vh - 172px);
 }
 
 a {
@@ -86,6 +90,10 @@ img {
 @media screen and (min-width: 768px) {
   body {
     font-size: 1.125rem;
+  }
+
+  main {
+    min-height: calc(100vh - 132px);
   }
 
   h1 {

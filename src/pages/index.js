@@ -9,6 +9,9 @@ import Dan from '../images/dan.svg';
 import IconCodepen from '../images/icons/logo-codepen.svg';
 import IconGithub from '../images/icons/logo-github.svg';
 import IconTwitter from '../images/icons/logo-twitter.svg';
+import IconInstagram from '../images/icons/logo-instagram.svg';
+import IconPinterest from '../images/icons/logo-pinterest.svg';
+import IconSpotify from '../images/icons/logo-spotify.svg';
 
 const HomeStyles = styled.section`
   background: var(--color-bg);
@@ -82,9 +85,58 @@ const DanStyles = styled.div`
   }
 `;
 
+const SocialLinks = styled.div`
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+
+  .socialLinks {
+    align-items: center;
+    display: flex;
+  }
+
+  p {
+    margin: 0.5rem 0;
+  }
+
+  a {
+    align-items: center;
+    border: 2px solid #f2e9ff;
+    border-radius: 50%;
+    display: flex;
+    flex-shrink: 0;
+    height: 48px;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    width: 48px;
+
+    &:active,
+    &:focus,
+    &:hover {
+      background: none;
+      box-shadow: none;
+      transform: scale(1.2);
+    }
+
+    &:not(:first-of-type) {
+      margin-left: 0.25rem;
+    }
+
+    @media screen and (min-width: 480px) {
+      &:not(:first-of-type) {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+`;
+
 const IndexPage = () => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO
+      title="Dan Denney | Home"
+      keywords={[`gatsby`, `application`, `react`]}
+    />
     <HomeStyles>
       <div>
         <h1>
@@ -102,11 +154,30 @@ const IndexPage = () => (
           going these days.
         </p>
 
-        <Icon size={24} color="#131417" svg={<IconCodepen />} />
+        <SocialLinks>
+          <p>On the socials:</p>
 
-        <Icon size={24} color="#171515" svg={<IconGithub />} />
-
-        <Icon size={24} color="#1ca1f2" svg={<IconTwitter />} />
+          <div className="socialLinks">
+            <a href="https://codepen.io/dandenney">
+              <Icon size={24} color="#131417" svg={<IconCodepen />} />
+            </a>
+            <a href="https://github.com/dandenney">
+              <Icon size={24} color="#171515" svg={<IconGithub />} />
+            </a>
+            <a href="https://twitter.com/dandenney">
+              <Icon size={24} color="#1ca1f2" svg={<IconTwitter />} />
+            </a>
+            <a href="https://www.pinterest.com/dandenney">
+              <Icon size={24} color="#e60022" svg={<IconPinterest />} />
+            </a>
+            <a href="https://www.instagram.com/dandenney">
+              <Icon size={24} color="#df4856" svg={<IconInstagram />} />
+            </a>
+            <a href="https://open.spotify.com/user/dndnny?si=67GhhUvBSO-zRzvbIimEgA">
+              <Icon size={24} color="#1dd761" svg={<IconSpotify />} />
+            </a>
+          </div>
+        </SocialLinks>
       </div>
 
       <DanStyles>

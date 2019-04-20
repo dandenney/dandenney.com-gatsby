@@ -14,6 +14,22 @@ const LearningToCookPage = ({ data }) => {
       <NavList bgcolor="#ffffff">
         <h1>Learning to Cook</h1>
         <p>Here's what I've been learning as I strive to be a culinarian.</p>
+
+        {data.allMarkdownRemark.edges.map(({ node }) => {
+          const journalPath = node.frontmatter.path.split('/')[2];
+          const journalDate = new Date(node.frontmatter.date);
+
+          if (journalPath === 'journal') {
+            return (
+              <Link key={node.id} to={node.frontmatter.path}>
+                <span>{node.frontmatter.title}</span>
+                <time dateTime={journalDate}>{journalDate.toDateString()}</time>
+              </Link>
+            );
+          }
+
+          return null;
+        })}
       </NavList>
     </Layout>
   );

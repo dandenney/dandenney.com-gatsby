@@ -2,19 +2,23 @@ import React from 'react';
 import { Link, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import NavList from '../components/NavList';
+import Layout from 'components/layout';
+import SEO from 'components/seo';
+import NavList from 'components/NavList';
+
+import Intro from 'components/learning-to-cook/intro';
 
 const LearningToCookPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Blips" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO
+        title="Learning to Cook"
+        keywords={[`foodie`, `learning to cook`, `culinarian`]}
+      />
+
+      <Intro />
 
       <NavList bgcolor="#ffffff">
-        <h1>Learning to Cook</h1>
-        <p>Here's what I've been learning as I strive to be a culinarian.</p>
-
         {data.allMarkdownRemark.edges.map(({ node }) => {
           const journalPath = node.frontmatter.path.split('/')[2];
           const journalDate = new Date(node.frontmatter.date);

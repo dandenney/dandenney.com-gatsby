@@ -10,6 +10,7 @@ const Post = styled.article`
   padding: 2rem;
 
   pre {
+    font-size: 1rem;
     margin-left: 50%;
     margin-right: 0;
     padding: 1rem;

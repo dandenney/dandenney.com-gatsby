@@ -15,5 +15,5 @@ The flavor and texture of these were great, so I'll work on getting more consist
 ## Lights, Camera, Action
 
 <div class="video-wrapper u-mt-1">
-<iframe class="video" src="https://player.vimeo.com/video/331557061" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+<iframe src="https://player.vimeo.com/video/331557061?title=0&byline=0&portrait=0" width="736" height="414" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
 </div>

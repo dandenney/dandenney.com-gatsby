@@ -2,6 +2,7 @@
 path: '/learning-to-cook/journal/pit-barrel-smoker'
 title: Pit Barrel Smoker
 date: '2019-05-04'
+featuredImage: './featured.jpg'
 ---
 
 ![Photo of a Pit Barrel Smoker](./pit-barrel-smoker.jpg)

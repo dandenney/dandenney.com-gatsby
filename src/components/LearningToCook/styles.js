@@ -11,6 +11,11 @@ export const LearningToCook = styled.section`
   h5 {
     color: #5c7210;
   }
+
+  h2 {
+    font-size: 3rem;
+    font-weight: 700;
+  }
 `;
 
 export const Wrapper = styled.div`

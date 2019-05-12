@@ -8,7 +8,7 @@ import Intro from 'components/LearningToCook/Intro';
 import Recipes from 'components/LearningToCook/Recipes';
 import Journal from 'components/LearningToCook/Journal';
 
-import { LearningToCook, Wrapper } from 'pages/learning-to-cook/styles';
+import { LearningToCook, Wrapper } from 'components/LearningToCook/styles';
 
 const LearningToCookPage = ({ data }) => {
   return (

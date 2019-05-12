@@ -2,6 +2,7 @@
 path: '/learning-to-cook/journal/glazed-carrots'
 title: Glazed Carrots
 date: '2019-03-19'
+featuredImage: './featured.jpg'
 ---
 
 ![Photo of glazed carrots](./glazed-carrots.jpg)

@@ -2,6 +2,7 @@
 path: '/learning-to-cook/journal/air-fryer-zucchini'
 title: Air Fryer Zucchini
 date: '2019-04-18'
+featuredImage: './featured.jpg'
 ---
 
 ![Air fryer zucchini](./air-fryer-zucchini.jpg)

@@ -2,6 +2,7 @@
 path: '/learning-to-cook/journal/slicing-and-treading'
 title: Slicing and Treating
 date: '2019-04-22'
+featuredImage: './featured.jpg'
 ---
 
 ![Photo of sliced beef with butter](./slicing-and-treating.jpg)

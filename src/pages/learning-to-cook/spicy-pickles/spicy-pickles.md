@@ -2,6 +2,7 @@
 path: '/learning-to-cook/journal/spicy-pickles'
 title: Spicy Pickles
 date: '2019-03-24'
+featuredImage: './featured.jpg'
 ---
 
 ![Photo of jars with pickled vegetables](./spicy-pickles.jpg)

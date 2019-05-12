@@ -1,11 +1,12 @@
 import React from 'react';
 
-import { Header } from 'components/learning-to-cook/introStyles';
+import { Header } from 'components/LearningToCook/Intro/styles';
 
 const Intro = () => (
   <Header>
     <h1>
-      Learning <div>to Cook</div>
+      Learning <br />
+      to Cook
     </h1>
     <p>
       One of my favorite parts of learning is sharing. As I've been working

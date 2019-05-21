@@ -1,5 +1,5 @@
 ---
-path: "/posts/front-end-dev/photoshop's-timeline-rocks"
+path: '/posts/front-end-dev/photoshops-timeline-rocks'
 title: "Photoshop's Timeline Rocks"
 summary: Sharing my experience in making a GIF with the timeline
 date: '2014-01-08'

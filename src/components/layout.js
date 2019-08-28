@@ -8,9 +8,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { StaticQuery, graphql } from 'gatsby';
+import { ThemeProvider } from 'theme-ui';
 
 import Header from './header';
 import Footer from './footer';
+
+import theme from 'gatsby-plugin-theme-ui';
 
 import './layout.css';
 
@@ -26,11 +29,11 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <ThemeProvider theme={theme}>
         <Header />
         <main>{children}</main>
         <Footer />
-      </>
+      </ThemeProvider>
     )}
   />
 );

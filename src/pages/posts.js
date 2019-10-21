@@ -1,31 +1,31 @@
-import { graphql, Link } from "gatsby"
+import { graphql, Link } from 'gatsby';
 /** @jsx jsx */
-import { jsx, Styled } from "theme-ui"
+import { jsx, Styled } from 'theme-ui';
 
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
-import { ListNav } from "patterns"
+import { ListNav } from 'patterns';
 
 const PostsPage = ({ data }) => {
-  const posts = data.allMdx.edges
+  const posts = data.allMdx.edges;
   return (
     <Layout>
       <SEO title="Posts" />
       <main
         sx={{
-          bg: "background",
-          px: 24,
-          textAlign: "center",
+          bg: 'background',
+          px: 16,
+          textAlign: 'center',
         }}
       >
         <Styled.h1>Posts</Styled.h1>
 
         <ListNav>
           {posts.map(post => {
-            const postInfo = post.node.frontmatter
-            const postPath = postInfo.path.split("/")[1]
-            if (postPath === "posts") {
+            const postInfo = post.node.frontmatter;
+            const postPath = postInfo.path.split('/')[1];
+            if (postPath === 'posts') {
               return (
                 <li>
                   <Link
@@ -49,15 +49,15 @@ const PostsPage = ({ data }) => {
                     {postInfo.tags[0]} | {post.node.timeToRead} minutes
                   </span>
                 </li>
-              )
+              );
             }
-            return null
+            return null;
           })}
         </ListNav>
       </main>
     </Layout>
-  )
-}
+  );
+};
 
 export const pageQuery = graphql`
   query PostsQuery {
@@ -74,6 +74,6 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;
 
-export default PostsPage
+export default PostsPage;

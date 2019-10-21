@@ -11,7 +11,7 @@ const IndexPage = () => (
       sx={{
         bg: `background`,
         minHeight: `calc(100vh - 250px)`,
-        px: 24,
+        px: 16,
       }}
     >
       <h1

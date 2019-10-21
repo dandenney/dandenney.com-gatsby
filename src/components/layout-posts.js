@@ -10,6 +10,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 import { Styled, ThemeProvider } from 'theme-ui';
 
+import Footer from './footer';
 import Header from './header';
 
 import theme from 'gatsby-plugin-theme-ui';
@@ -47,11 +48,7 @@ const PostLayout = ({ children, pageContext }) => {
           {children}
         </article>
       </main>
-      <footer>
-        © {new Date().getFullYear()}, Built with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
-      </footer>
+      <Footer />
     </ThemeProvider>
   );
 };

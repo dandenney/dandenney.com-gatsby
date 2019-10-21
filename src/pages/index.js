@@ -10,7 +10,7 @@ const IndexPage = () => (
     <main
       sx={{
         bg: `background`,
-        minHeight: `calc(100vh - 280px)`,
+        minHeight: `calc(100vh - 250px)`,
         px: 24,
       }}
     >

@@ -1,4 +1,4 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled';
 
 const CustomTable = styled.div`
   overflow-x: scroll;
@@ -15,6 +15,6 @@ const CustomTable = styled.div`
   tr:nth-child(even) td {
     background: rgba(239, 241, 243, 0.5);
   }
-`
+`;
 
-export { CustomTable }
+export { CustomTable };

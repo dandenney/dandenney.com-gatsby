@@ -3,7 +3,7 @@ import { Link } from 'gatsby';
 /** @jsx jsx */
 import { jsx, Flex } from 'theme-ui';
 
-import SiteNav from 'components/siteNav';
+import SiteNav from 'components/site-nav';
 
 import avatar from 'images/avatar-circle.png';
 

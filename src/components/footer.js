@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import { jsx, Flex, Styled } from 'theme-ui';
 
-import SiteNav from 'components/siteNav';
+import SiteNav from 'components/site-nav';
 
 const Footer = () => (
   <Flex

@@ -5,14 +5,14 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import { Styled, ThemeProvider } from "theme-ui"
+import React from 'react';
+import PropTypes from 'prop-types';
+import { useStaticQuery, graphql } from 'gatsby';
+import { Styled, ThemeProvider } from 'theme-ui';
 
-import Header from "./header"
+import Header from './header';
 
-import theme from "gatsby-plugin-theme-ui"
+import theme from 'gatsby-plugin-theme-ui';
 
 const PostLayout = ({ children, pageContext }) => {
   const data = useStaticQuery(graphql`
@@ -23,8 +23,8 @@ const PostLayout = ({ children, pageContext }) => {
         }
       }
     }
-  `)
-  const { title } = pageContext.frontmatter
+  `);
+  const { title } = pageContext.frontmatter;
 
   return (
     <ThemeProvider theme={theme}>
@@ -38,7 +38,7 @@ const PostLayout = ({ children, pageContext }) => {
           style={{
             margin: `0 auto`,
             maxWidth: 700,
-            padding: `48px`,
+            padding: `32px`,
             position: `relative`,
             zIndex: 1,
           }}
@@ -53,11 +53,11 @@ const PostLayout = ({ children, pageContext }) => {
         <a href="https://www.gatsbyjs.org">Gatsby</a>
       </footer>
     </ThemeProvider>
-  )
-}
+  );
+};
 
 PostLayout.propTypes = {
   children: PropTypes.node.isRequired,
-}
+};
 
-export default PostLayout
+export default PostLayout;

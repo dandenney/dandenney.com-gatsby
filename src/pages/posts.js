@@ -1,58 +1,79 @@
-import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql, Link } from "gatsby"
+/** @jsx jsx */
+import { jsx, Styled } from "theme-ui"
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
-import NavList from '../components/NavList';
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+
+import { ListNav } from "patterns"
 
 const PostsPage = ({ data }) => {
+  const posts = data.allMdx.edges
   return (
     <Layout>
-      <SEO title="Posts" keywords={[`gatsby`, `application`, `react`]} />
+      <SEO title="Posts" />
+      <main
+        sx={{
+          bg: "background",
+          px: 24,
+          textAlign: "center",
+        }}
+      >
+        <Styled.h1>Posts</Styled.h1>
 
-      <NavList>
-        <h1>Posts</h1>
-        <p>Your typical blog posts, maybe not as well written.</p>
-
-        {data.allMarkdownRemark.edges.map(({ node }) => {
-          const postPath = node.frontmatter.path.split('/')[1];
-          const postDate = new Date(node.frontmatter.date);
-
-          if (postPath === 'posts') {
-            return (
-              <Link key={node.id} to={node.frontmatter.path}>
-                <span>{node.frontmatter.title}</span>
-                <p>{node.frontmatter.summary}</p>
-                <time dateTime={postDate}>{postDate.toDateString()}</time>
-              </Link>
-            );
-          }
-
-          return null;
-        })}
-      </NavList>
+        <ListNav>
+          {posts.map(post => {
+            const postInfo = post.node.frontmatter
+            const postPath = postInfo.path.split("/")[1]
+            if (postPath === "posts") {
+              return (
+                <li>
+                  <Link
+                    sx={{
+                      display: `block`,
+                      fontSize: [1, 3, 4],
+                      fontWeight: `heading`,
+                    }}
+                    to={postInfo.path}
+                    key={postInfo.path}
+                  >
+                    {postInfo.title}
+                  </Link>
+                  <span
+                    sx={{
+                      display: `block`,
+                      mt: 4,
+                      textTransform: `uppercase`,
+                    }}
+                  >
+                    {postInfo.tags[0]} | {post.node.timeToRead} minutes
+                  </span>
+                </li>
+              )
+            }
+            return null
+          })}
+        </ListNav>
+      </main>
     </Layout>
-  );
-};
+  )
+}
 
-export const query = graphql`
-  {
-    allMarkdownRemark(
-      sort: { order: DESC, fields: [frontmatter___date] }
-      limit: 1000
-    ) {
+export const pageQuery = graphql`
+  query PostsQuery {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
           frontmatter {
             path
+            tags
             title
-            date
-            summary
           }
+          timeToRead
         }
       }
     }
   }
-`;
+`
 
-export default PostsPage;
+export default PostsPage

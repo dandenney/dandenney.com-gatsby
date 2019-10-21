@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `DanDenney.com`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `The digital playground of Dan Denney.`,
     author: `@dandenney`,
   },
   plugins: [
@@ -16,43 +16,38 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages/`,
-        name: 'posts',
-      },
-    },
-    `gatsby-plugin-emotion`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-svg`,
-    `gatsby-plugin-theme-ui`,
-    {
-      resolve: `gatsby-plugin-manifest`,
-      options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
-        start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
-        display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        name: `posts`,
+        path: `${__dirname}/src/blog/`,
       },
     },
     {
-      resolve: 'gatsby-plugin-web-font-loader',
+      resolve: "gatsby-plugin-page-creator",
       options: {
-        typekit: {
-          id: 'ddg5xff',
+        path: `${__dirname}/src/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        extensions: [`.mdx`, `.md`],
+        defaultLayouts: {
+          posts: require.resolve("./src/components/layout-posts.js"),
+          default: require.resolve("./src/components/layout.js"),
         },
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        plugins: [
+        gatsbyRemarkPlugins: [
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 1035,
+            },
+          },
+          {
+            resolve: `gatsby-remark-copy-linked-files`,
+          },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: 'language-',
+              classPrefix: "language-",
               inlineCodeMarker: null,
               aliases: {},
               // This toggles the display of line numbers globally alongside the code.
@@ -68,25 +63,38 @@ module.exports = {
               noInlineHighlight: true,
             },
           },
-          {
-            resolve: `gatsby-remark-images`,
-            options: {
-              // It's important to specify the maxWidth (in pixels) of
-              // the content container as this plugin uses this as the
-              // base for generating different widths of each image.
-              maxWidth: 736,
-            },
-          },
-          {
-            resolve: `gatsby-remark-copy-linked-files`,
-          },
         ],
+        plugins: ["gatsby-remark-images"],
+      },
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-theme-ui`,
+    `gatsby-plugin-react-svg`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `gatsby-starter-default`,
+        short_name: `starter`,
+        start_url: `/`,
+        background_color: `#663399`,
+        theme_color: `#663399`,
+        display: `minimal-ui`,
+        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+      },
+    },
+    {
+      resolve: "gatsby-plugin-web-font-loader",
+      options: {
+        typekit: {
+          id: "ddg5xff",
+        },
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-3589831-2',
+        trackingId: "UA-3589831-2",
         head: false,
       },
     },
@@ -94,4 +102,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-};
+}

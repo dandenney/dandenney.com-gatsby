@@ -1,24 +1,13 @@
-import { Link } from 'gatsby';
-import React from 'react';
-import styled from '@emotion/styled';
+import { Link } from "gatsby"
+import React from "react"
 
-const Nav = styled.nav`
-  align-items: center;
-  display: flex;
-
-  a {
-    &:not(:first-of-type) {
-      margin-left: 1rem;
-    }
-  }
-`;
+import { Container } from "components/siteNavStyles"
 
 const SiteNav = () => (
-  <Nav>
-    <Link to="/posts">Blog</Link>
+  <Container>
+    <Link to="/posts">Posts</Link>
     <Link to="/blips">Blips</Link>
-    <Link to="/tinkerings">Tinkerings</Link>
-  </Nav>
-);
+  </Container>
+)
 
-export default SiteNav;
+export default SiteNav

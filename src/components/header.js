@@ -1,30 +1,41 @@
 import { Link } from 'gatsby';
-import React from 'react';
-import styled from '@emotion/styled';
 
-import SiteNav from './sitenav';
+/** @jsx jsx */
+import { jsx, Flex } from 'theme-ui';
 
-import avatar from '../images/avatar-circle.png';
+import SiteNav from 'components/siteNav';
 
-const HeaderStyles = styled.header`
-  align-items: center;
-  border-bottom: 1px solid var(--color-accent);
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 2rem;
-
-  img {
-    display: block;
-  }
-`;
+import avatar from 'images/avatar-circle.png';
 
 const Header = () => (
-  <HeaderStyles>
-    <Link className="link-img" to="/">
-      <img alt="Illustrated Dan Denney in a circle" src={avatar} width="40" />
+  <Flex
+    as="header"
+    sx={{
+      borderBottom: theme => `4px double ${theme.colors.accent}`,
+      justifyContent: `space-between`,
+      p: 8,
+    }}
+  >
+    <Link
+      to="/"
+      sx={{
+        alignItems: `center`,
+        display: `flex`,
+        transition: `transform 0.3s`,
+        '&:hover': {
+          transform: `scale(1.1)`,
+        },
+      }}
+    >
+      <img
+        alt="Illustration of Dan in a circle"
+        src={avatar}
+        sx={{ mr: 4 }}
+        width="40"
+      />
     </Link>
     <SiteNav />
-  </HeaderStyles>
+  </Flex>
 );
 
 export default Header;

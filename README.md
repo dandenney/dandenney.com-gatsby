@@ -1,4 +1,4 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/9fb7535e-3c6c-4ce8-92d9-bc7c3fb4263f/deploy-status)](https://app.netlify.com/sites/boring-einstein-8b1923/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2d40c8da-f873-49ba-8aa6-f6d364e31d7a/deploy-status)](https://app.netlify.com/sites/friendly-noether-fa28e2/deploys)
 
 <!-- AUTO-GENERATED-CONTENT:START (STARTER) -->
 <p align="center">

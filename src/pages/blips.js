@@ -19,7 +19,13 @@ const BlipsPage = ({ data }) => {
           textAlign: 'center',
         }}
       >
-        <Styled.h1>Blips</Styled.h1>
+        <Styled.h1
+          sx={{
+            mt: 16,
+          }}
+        >
+          Blips
+        </Styled.h1>
 
         <ListNav>
           {blips.map(blip => {

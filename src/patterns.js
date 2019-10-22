@@ -1,4 +1,25 @@
-import styled from "@emotion/styled"
+import styled from '@emotion/styled';
+
+const ImgListNav = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  font-family: ${props => props.theme.fonts.body};
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    background: #ffffff;
+    border: 1px solid ${props => props.theme.colors.accent};
+    border-radius: 3px;
+    margin: 1rem;
+    transition: transform 0.3s;
+    &:hover {
+      transform: scale(1.1);
+    },
+  }
+`;
 
 const ListNav = styled.ul`
   display: inline-block;
@@ -46,6 +67,6 @@ const ListNav = styled.ul`
       background-position: 0 100%, 0 100%;
     }
   }
-`
+`;
 
-export { ListNav }
+export { ImgListNav, ListNav };

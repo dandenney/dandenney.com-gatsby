@@ -1,17 +1,18 @@
 import { graphql, Link } from 'gatsby';
+import Img from 'gatsby-image';
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
-import { ListNav } from 'patterns';
+import { ImgListNav } from 'patterns';
 
-const PostsPage = ({ data }) => {
+const LearningToCookPage = ({ data }) => {
   const posts = data.allMdx.edges;
   return (
     <Layout>
-      <SEO title="Posts" />
+      <SEO title="Learning to Cook" />
       <main
         sx={{
           bg: 'background',
@@ -24,49 +25,57 @@ const PostsPage = ({ data }) => {
             mt: 16,
           }}
         >
-          Posts
+          Learning to Cook
         </Styled.h1>
 
-        <ListNav>
+        <ImgListNav>
           {posts.map(post => {
             const postInfo = post.node.frontmatter;
             const postPath = postInfo.path.split('/')[1];
-            if (postPath === 'posts') {
+            console.log(postPath + postInfo);
+            if (postPath === 'learning-to-cook') {
               return (
-                <li>
+                <li
+                  sx={{
+                    minWidth: [`100%`, `316px`],
+                  }}
+                >
                   <Link
                     sx={{
+                      color: `action`,
                       display: `block`,
-                      fontSize: [1, 3, 4],
+                      fontSize: 2,
                       fontWeight: `heading`,
+                      pb: 5,
+                      pt: 9,
+                      px: 9,
+                      textDecoration: `none`,
                     }}
                     to={postInfo.path}
                     key={postInfo.path}
                   >
+                    <Img
+                      sizes={postInfo.featuredImage.childImageSharp.sizes}
+                      sx={{
+                        mb: 4,
+                        width: `100%`,
+                      }}
+                    />
                     {postInfo.title}
                   </Link>
-                  <span
-                    sx={{
-                      display: `block`,
-                      mt: 4,
-                      textTransform: `uppercase`,
-                    }}
-                  >
-                    {postInfo.tags[0]} | {post.node.timeToRead} minutes
-                  </span>
                 </li>
               );
             }
             return null;
           })}
-        </ListNav>
+        </ImgListNav>
       </main>
     </Layout>
   );
 };
 
 export const pageQuery = graphql`
-  query PostsQuery {
+  query LearningsQuery {
     allMdx(sort: { fields: frontmatter___date, order: DESC }) {
       edges {
         node {
@@ -74,12 +83,18 @@ export const pageQuery = graphql`
             path
             tags
             title
+            featuredImage {
+              childImageSharp {
+                sizes(maxWidth: 250) {
+                  ...GatsbyImageSharpSizes
+                }
+              }
+            }
           }
-          timeToRead
         }
       }
     }
   }
 `;
 
-export default PostsPage;
+export default LearningToCookPage;

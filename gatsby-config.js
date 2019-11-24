@@ -21,9 +21,22 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-page-creator",
+      resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/src/blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `songs`,
+        path: `${__dirname}/src/muzak`,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-page-creator',
+      options: {
+        path: `${__dirname}/src/muzak`,
       },
     },
     {
@@ -31,12 +44,13 @@ module.exports = {
       options: {
         extensions: [`.mdx`, `.md`],
         defaultLayouts: {
-          posts: require.resolve("./src/components/layout-posts.js"),
-          default: require.resolve("./src/components/layout.js"),
+          songs: require.resolve('./src/components/layout-songs.js'),
+          posts: require.resolve('./src/components/layout-posts.js'),
+          default: require.resolve('./src/components/layout.js'),
         },
         gatsbyRemarkPlugins: [
           {
-            resolve: "gatsby-remark-images",
+            resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1035,
             },
@@ -47,7 +61,7 @@ module.exports = {
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
-              classPrefix: "language-",
+              classPrefix: 'language-',
               inlineCodeMarker: null,
               aliases: {},
               // This toggles the display of line numbers globally alongside the code.
@@ -64,7 +78,7 @@ module.exports = {
             },
           },
         ],
-        plugins: ["gatsby-remark-images"],
+        plugins: ['gatsby-remark-images'],
       },
     },
     `gatsby-transformer-sharp`,
@@ -84,17 +98,17 @@ module.exports = {
       },
     },
     {
-      resolve: "gatsby-plugin-web-font-loader",
+      resolve: 'gatsby-plugin-web-font-loader',
       options: {
         typekit: {
-          id: "ddg5xff",
+          id: 'ddg5xff',
         },
       },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: "UA-3589831-2",
+        trackingId: 'UA-3589831-2',
         head: false,
       },
     },
@@ -102,4 +116,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

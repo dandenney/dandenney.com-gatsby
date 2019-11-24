@@ -12,7 +12,7 @@ export default {
   colors: {
     accent: '#e6e9eb',
     action: '#b51f24',
-    background: '#fbfcfc',
+    background: '#ffffff',
     heading: '#3f3f3f',
     text: '#4a4a4a',
   },

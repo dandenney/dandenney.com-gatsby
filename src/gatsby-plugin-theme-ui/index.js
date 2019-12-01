@@ -250,5 +250,9 @@ export default {
       marginLeft: ['-2rem !important', null, null, '0 !important'],
       marginRight: ['-2rem !important', null, null, '0 !important'],
     },
+    img: {
+      display: 'block',
+      maxWidth: '100%',
+    },
   },
 };

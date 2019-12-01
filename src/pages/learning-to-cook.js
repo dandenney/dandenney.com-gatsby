@@ -3,8 +3,9 @@ import Img from 'gatsby-image';
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui';
 
-import Layout from '../components/layout';
-import SEO from '../components/seo';
+import Layout from 'components/layout';
+import SEO from 'components/seo';
+import Intro from 'components/learning-to-cook/intro';
 
 import { ImgListNav } from 'patterns';
 
@@ -16,59 +17,65 @@ const LearningToCookPage = ({ data }) => {
       <main
         sx={{
           bg: 'background',
-          px: 16,
-          textAlign: 'center',
         }}
       >
-        <Styled.h1
+        <Intro />
+        <section
           sx={{
-            mt: 16,
+            mx: 'auto',
+            maxWidth: '1060px',
           }}
         >
-          Learning to Cook
-        </Styled.h1>
-
-        <ImgListNav>
-          {posts.map(post => {
-            const postInfo = post.node.frontmatter;
-            const postPath = postInfo.path.split('/')[1];
-            console.log(postPath + postInfo);
-            if (postPath === 'learning-to-cook') {
-              return (
-                <li
-                  sx={{
-                    minWidth: [`100%`, `316px`],
-                  }}
-                >
-                  <Link
+          <Styled.h2
+            sx={{
+              mb: 12,
+              textAlign: 'center',
+            }}
+          >
+            Learning Journal
+          </Styled.h2>
+          <ImgListNav>
+            {posts.map(post => {
+              const postInfo = post.node.frontmatter;
+              const postPath = postInfo.path.split('/')[1];
+              console.log(postPath + postInfo);
+              if (postPath === 'learning-to-cook') {
+                return (
+                  <li
                     sx={{
-                      color: `action`,
-                      display: `block`,
-                      fontSize: 2,
-                      fontWeight: `heading`,
-                      pb: 5,
-                      pt: 9,
-                      px: 9,
-                      textDecoration: `none`,
+                      minWidth: [`100%`, `316px`],
                     }}
-                    to={postInfo.path}
-                    key={postInfo.path}
                   >
-                    <Img
-                      sizes={postInfo.featuredImage.childImageSharp.sizes}
+                    <Link
                       sx={{
-                        mb: 4,
-                        width: `100%`,
+                        color: `action`,
+                        display: `block`,
+                        fontSize: 2,
+                        fontWeight: `heading`,
+                        pb: 5,
+                        pt: 9,
+                        px: 9,
+                        textDecoration: `none`,
                       }}
-                    />
-                    {postInfo.title}
-                  </Link>
-                </li>
-              );
-            }
-            return null;
-          })}
-        </ImgListNav>
+                      to={postInfo.path}
+                      key={postInfo.path}
+                    >
+                      <Img
+                        sizes={postInfo.featuredImage.childImageSharp.sizes}
+                        sx={{
+                          mb: 4,
+                          width: `100%`,
+                        }}
+                      />
+                      {postInfo.title}
+                    </Link>
+                  </li>
+                );
+              }
+              return null;
+            })}
+          </ImgListNav>
+        </section>
       </main>
     </Layout>
   );

@@ -230,8 +230,10 @@ export default {
       fontFamily: 'body',
       fontWeight: 'body',
       lineHeight: 'body',
+      pl: 0,
     },
     li: {
+      listStyle: 'none',
       '&:not(:first-of-type)': {
         marginTop: `1rem`,
       },

@@ -34,9 +34,9 @@ const BlipsPage = ({ data }) => {
             if (blipPath === 'blips') {
               return (
                 <li>
-                  <Link
+                  <Styled.a
+                    as={Link}
                     sx={{
-                      display: `block`,
                       fontSize: [1, 3, 4],
                       fontWeight: `heading`,
                     }}
@@ -44,7 +44,7 @@ const BlipsPage = ({ data }) => {
                     key={blipMeta.path}
                   >
                     {blipMeta.title}
-                  </Link>
+                  </Styled.a>
                   <span
                     sx={{
                       display: `block`,

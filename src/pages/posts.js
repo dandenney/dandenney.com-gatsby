@@ -34,9 +34,9 @@ const PostsPage = ({ data }) => {
             if (postPath === 'posts') {
               return (
                 <li>
-                  <Link
+                  <Styled.a
+                    as={Link}
                     sx={{
-                      display: `block`,
                       fontSize: [1, 3, 4],
                       fontWeight: `heading`,
                     }}
@@ -44,7 +44,7 @@ const PostsPage = ({ data }) => {
                     key={postInfo.path}
                   >
                     {postInfo.title}
-                  </Link>
+                  </Styled.a>
                   <span
                     sx={{
                       display: `block`,

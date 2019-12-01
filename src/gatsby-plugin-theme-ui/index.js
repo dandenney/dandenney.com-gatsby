@@ -11,7 +11,7 @@ export default {
   ],
   colors: {
     accent: '#e6e9eb',
-    action: '#b51f24',
+    action: '#257d96',
     background: '#ffffff',
     heading: '#3f3f3f',
     text: '#4a4a4a',
@@ -212,16 +212,16 @@ export default {
       padding: `0.5rem`,
     },
     a: {
-      backgroundImage: `linear-gradient(to right, #b51f24, #b51f24 50%, transparent 50%, transparent 100%),
-                          linear-gradient(to right, #b51f24, #b51f24 50%, transparent 50%, transparent 100%)`,
-      backgroundPosition: `0 100%, 100% 100%`,
+      backgroundImage: `linear-gradient(to right, #257d96, #257d96 50%, transparent 50%, transparent 100%),
+                          linear-gradient(to right, #257d96, #257d96 50%, transparent 50%, transparent 100%)`,
+      backgroundPosition: `0 101%, 100% 101%`,
       backgroundRepeat: `repeat-x`,
       backgroundSize: `4px 0.055555556em, 200% 0.055555556em`,
       color: `action`,
       textDecoration: `none`,
       transition: `background-position 0.3s`,
       '&:hover': {
-        backgroundPosition: `0 100%, 0 100%`,
+        backgroundPosition: `0 101%, 0 101%`,
       },
     },
     ul: {

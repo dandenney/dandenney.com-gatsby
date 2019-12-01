@@ -97,7 +97,8 @@ const FrontEnd = () => (
               sx={{
                 bg: 'background',
                 maxWidth: [null, null, null, null, '700px'],
-                px: [24, null, null, null, null],
+                pl: [24, null, null, null, 32],
+                pr: 24,
                 py: 16,
               }}
             >

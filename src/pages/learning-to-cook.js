@@ -17,6 +17,7 @@ const LearningToCookPage = ({ data }) => {
       <main
         sx={{
           bg: 'background',
+          px: [16, null, null, null, 0],
         }}
       >
         <Intro />

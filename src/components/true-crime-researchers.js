@@ -72,8 +72,11 @@ const TrueCrimeResearchers = () => (
 
     <Flex
       sx={{
+        flexDirection: ['column', null, null, null, 'row'],
         justifyContent: 'center',
-        pt: 24,
+        mx: 'auto',
+        maxWidth: ['468px', null, null, null, '100%'],
+        pt: [24, null, null, null, 4],
       }}
     >
       <Styled.h3
@@ -91,6 +94,8 @@ const TrueCrimeResearchers = () => (
         alt="Abby and Libby"
         src={ImgAbbyLibby}
         sx={{
+          maxWidth: 'calc(100% - 16px)',
+          my: 4,
           p: 4,
           border: t => `1px solid ${t.colors.accent}`,
         }}

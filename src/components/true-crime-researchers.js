@@ -59,7 +59,7 @@ const TrueCrimeResearchers = () => (
         part of the community of people who are trying to help find answers.
       </Styled.p>
       <Styled.p>
-        <Styled.a href="https://nostalgic-cray-3d0a8a.netlify.com">
+        <Styled.a href="https://www.truecrimeresearchers.com">
           True Crime Researchers
         </Styled.a>{' '}
         is a curated collection of missing person and homicide cases that I have
@@ -117,7 +117,7 @@ const TrueCrimeResearchers = () => (
 
     <Styled.p sx={{ mt: 12, textAlign: 'center' }}>
       Learn about the{' '}
-      <Styled.a href="https://nostalgic-cray-3d0a8a.netlify.com/cases/delphi-murders">
+      <Styled.a href="https://www.truecrimeresearchers.com/cases/delphi-murders">
         Delphi Murders
       </Styled.a>{' '}
       and other cases.

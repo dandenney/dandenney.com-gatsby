@@ -256,5 +256,10 @@ export default {
       display: 'block',
       maxWidth: '100%',
     },
+    figcaption: {
+      fontFamily: 'body',
+      marginLeft: 4,
+      marginTop: 4,
+    },
   },
 };

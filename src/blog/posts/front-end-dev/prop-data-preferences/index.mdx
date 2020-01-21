@@ -8,6 +8,8 @@ tags:
   - front-end-dev
 ---
 
+import TweetEmbed from 'react-tweet-embed';
+
 This week I was working on a page that had a significant amount of looped data. In the PR, we discussed options and preferences for how to pass data down through props.
 
 You can skip the context and review the [options](#options).
@@ -117,6 +119,8 @@ const Song = ({ song }) => {
 };
 ```
 
+<TweetEmbed id="1218653209499181057" />
+
 ### Two: Spread the props
 
 The spread operator reduces some redundancy in the nested component:
@@ -144,6 +148,8 @@ const Song = ({ imageUrl, runtime, title }) => {
   );
 };
 ```
+
+<TweetEmbed id="1218629478752100363" />
 
 ### Three: Destructure in the parent component
 
@@ -176,6 +182,8 @@ const Song = ({ imageUrl, runtime, title }) => {
 };
 ```
 
+<TweetEmbed id="1218648200086724615" />
+
 ### Four: One Component to Rule Them All
 
 Rule change! If you choose this one, I'd love to know if it means "always" or if the properties or lines of code are under a threshold and what that threshold is. This particular example is tiny, but imagine a data set with 10+ key/value pairs, additional content, some structural markup for grids, etc.
@@ -196,6 +204,8 @@ const Songs = ({ songs }) => (
   </section>
 );
 ```
+
+<TweetEmbed id="1218656821076021251" />
 
 ### Five? Choose Your Own Adventure
 

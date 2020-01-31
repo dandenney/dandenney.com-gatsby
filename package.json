@@ -18,7 +18,7 @@
     "gatsby-plugin-mdx": "^1.0.69",
     "gatsby-plugin-offline": "^3.0.14",
     "gatsby-plugin-page-creator": "^2.1.39",
-    "gatsby-plugin-react-helmet": "^3.1.11",
+    "gatsby-plugin-react-helmet": "^3.1.21",
     "gatsby-plugin-react-svg": "^2.1.2",
     "gatsby-plugin-sharp": "^2.4.4",
     "gatsby-plugin-theme-ui": "^0.2.43",

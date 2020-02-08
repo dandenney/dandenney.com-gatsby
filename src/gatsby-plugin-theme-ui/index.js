@@ -14,15 +14,16 @@ export default {
     action: '#257d96',
     background: '#ffffff',
     heading: '#3f3f3f',
-    text: '#4a4a4a',
+    text: '#424242',
   },
   fonts: {
-    body: 'canada-type-gibson, sans-serif',
+    body: '"Sentinel A", "Sentinel B"',
+    code: '"Operator Mono A", "Operator Mono B"',
   },
   fontSizes: ['18px', '20px', '24px', '28px', '32px', '36px', '40px', '64px'],
   fontWeights: {
     body: 400,
-    bold: 600,
+    bold: 700,
     heading: 700,
   },
   lineHeights: {
@@ -249,6 +250,8 @@ export default {
       padding: `2rem`,
     },
     pre: {
+      borderRadius: '4px',
+      fontFamily: 'code',
       marginLeft: ['-2rem !important', null, null, '0 !important'],
       marginRight: ['-2rem !important', null, null, '0 !important'],
     },

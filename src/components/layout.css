@@ -13,9 +13,15 @@ p > code,
 li > code {
   background: #ffffff;
   box-shadow: 0 0 0 1px #f2e9ff;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+  font-family: 'Operator Mono A', 'Operator Mono B';
   font-size: 75%;
   padding: 2px 4px;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+  font-family: 'Operator Mono A', 'Operator Mono B';
+  font-size: 1.125rem;
 }
 /* article,
 aside,

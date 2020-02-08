@@ -2,6 +2,8 @@ import { graphql, Link } from 'gatsby';
 /** @jsx jsx */
 import { jsx, Styled } from 'theme-ui';
 
+import pluralize from 'helpers/pluralize';
+
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
@@ -49,10 +51,11 @@ const BlipsPage = ({ data }) => {
                     sx={{
                       display: `block`,
                       mt: 4,
-                      textTransform: `uppercase`,
+                      textTransform: `capitalize`,
                     }}
                   >
-                    {blip.node.timeToRead} minutes
+                    {blip.node.timeToRead}{' '}
+                    {pluralize(blip.node.timeToRead, 'minute', 'minutes')}
                   </span>
                 </li>
               );

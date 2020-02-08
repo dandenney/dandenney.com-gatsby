@@ -49,7 +49,7 @@ const PostsPage = ({ data }) => {
                     sx={{
                       display: `block`,
                       mt: 4,
-                      textTransform: `uppercase`,
+                      textTransform: `capitalize`,
                     }}
                   >
                     {postInfo.tags[0]} | {post.node.timeToRead} minutes
